@@ -16,15 +16,10 @@ public:
 private slots:
     void newConnection();
     void removeConnection();
-    //void newMessage();
-
-    //void on_disconnectClients_clicked();
 
 private:
-    //Ui::TcpServer *ui;
     QTcpServer *m_server;
     QList<QTcpSocket*> m_clients;
-    //QHash<QTcpSocket*, QString> m_receivedData;
 
 signals:
 

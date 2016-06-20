@@ -23,12 +23,8 @@ void Server::newConnection(){
 
 void Server::removeConnection(){
     if (QTcpSocket *con = qobject_cast<QTcpSocket*>(sender())){
-        /*ui->log->insertPlainText(QString("* Connection removed: %1, port %2\n")
-                                 .arg(con->peerAddress().toString())
-                                 .arg(QString::number(con->peerPort())));*/
         m_clients.removeOne(con);
         con->deleteLater();
-        //ui->disconnectClients->setEnabled(!m_clients.isEmpty());
         qDebug()<<"Connection removed";
     }
 
