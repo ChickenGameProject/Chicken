@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-06-20T09:52:43
+# Project created by QtCreator 2016-06-20T11:37:02
 #
 #-------------------------------------------------
 
@@ -9,12 +9,12 @@ QT       +=network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = TcpClient
+TARGET = TCPclient
 TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    cilent.cpp
+    client.cpp
 
 HEADERS  += \
-    cilent.h
+    client.h
