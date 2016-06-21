@@ -4,6 +4,7 @@
 #include <QWidget>
 #include<QTcpSocket>
 #include<QString>
+#include<QTcpServer>
 
 class Client : public QWidget
 {

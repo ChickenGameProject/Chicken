@@ -1,10 +1,10 @@
 #include "server.h"
-#include<QDebug>
 
-Server::Server(){
+Server::Server(QWidget *parent) : QWidget(parent)
+{
     m_server=new QTcpServer(this);
-    if (!m_server->listen(QHostAddress::LocalHost, 52693)) {
-        qDebug()<<"Connection failde";
+    if (!m_server->listen(QHostAddress::LocalHost, 12345)) {
+        qDebug()<<"Connection failde"<<m_server->errorString();
             return;
     }
     connect(m_server, SIGNAL(newConnection()), this, SLOT(newConnection()));
@@ -14,15 +14,18 @@ void Server::newConnection(){
     while (m_server->hasPendingConnections()) {
         QTcpSocket *con = m_server->nextPendingConnection();
         m_clients << con;
+        //qDebug()<<"connected to"<<m_server->serverAddress()<<"   port:  "<<12345;
         connect(con, SIGNAL(disconnected()), this, SLOT(removeConnection()));
         connect(con, SIGNAL(readyRead()), this, SLOT(newMessage()));
     }
+
 
 }
 
 void Server::removeConnection(){
     if (QTcpSocket *con = qobject_cast<QTcpSocket*>(sender())) {
         m_clients.removeOne(con);
+        qDebug()<<"Disconnected";
         con->deleteLater();
     }
 }
@@ -48,3 +51,4 @@ void Server::newMessage()
         }
     }
 }
+

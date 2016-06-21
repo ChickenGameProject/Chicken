@@ -3,7 +3,8 @@
 
 Client::Client(QWidget *parent) : QWidget(parent){
       m_socket=new QTcpSocket(this);
-      m_socket->connectToHost("127.0.0.1",52693);
+      m_socket->connectToHost("127.0.0.1",12345);   //i changed here QHostAddress::LocalHost
+      //qDebug()<<"connected to"<<m_socket->localAddress()<<"   port:  "<<12345;
       //ui->setupUi(this);
       //ui->address->setText(QHostAddress(QHostAddress::LocalHost).toString());
       //ui->port->setValue(52693);
@@ -21,7 +22,7 @@ void Client::readMessage(){
         qDebug()<<"There isnt any connection";
         return;
     }
-
+    qDebug()<<"connected to"<<m_socket->localAddress()<<"   port:  "<<12345;
     m_receivedData.append(m_socket->readAll());
     if (!m_receivedData.contains(QChar(23)))
         return;

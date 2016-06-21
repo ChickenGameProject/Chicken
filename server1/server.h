@@ -1,14 +1,17 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include<QObject>
+#include <QWidget>
 #include<QTcpServer>
 #include<QTcpSocket>
+#include<QString>
+#include<QList>
 
-class Server:public QObject{
+class Server : public QWidget
+{
     Q_OBJECT
 public:
-    Server();
+    explicit Server(QWidget *parent = 0);
 
 private slots:
     void newConnection();
@@ -19,7 +22,10 @@ private:
     QTcpServer *m_server;
     QList<QTcpSocket*> m_clients;
     QHash<QTcpSocket*, QString> m_receivedData;
+
+signals:
+
+public slots:
 };
 
 #endif // SERVER_H
-
