@@ -4,15 +4,13 @@
 #include <QWidget>
 #include<QTcpServer>
 #include<QTcpSocket>
-#include<QString>
-#include<QList>
 
 class Server : public QWidget
 {
     Q_OBJECT
 public:
     explicit Server(QWidget *parent = 0);
-
+    
 private slots:
     void newConnection();
     void removeConnection();

@@ -8,6 +8,7 @@ Server::Server(QWidget *parent) : QWidget(parent)
             return;
     }
     connect(m_server, SIGNAL(newConnection()), this, SLOT(newConnection()));
+
 }
 
 void Server::newConnection(){
@@ -51,4 +52,5 @@ void Server::newMessage()
         }
     }
 }
+
 
