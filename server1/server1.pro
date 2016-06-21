@@ -2,7 +2,7 @@ QT += core
 QT -= gui
 QT +=network
 
-TARGET = server1
+TARGET = Server1
 CONFIG += console
 CONFIG -= app_bundle
 
