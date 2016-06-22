@@ -1,6 +1,7 @@
 #include "life.h"
 
-Life::Life(QObject *parent) :
-    QGraphicsPixmapItem(parent)
-{
+int Life::numberOfLife = 5;
+Life::Life(QObject *parent){
+    setPixmap(QPixmap("E:\\game\\sprites\\life.png"));
 }
+

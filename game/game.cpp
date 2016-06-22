@@ -79,6 +79,14 @@ void Game::start(){
     // set player
     setPlayer();
 
+    // add life
+    life.resize(Life::numberOfLife);
+
+    for (int i=0;i<Life::numberOfLife;i++){
+        life[i] = new Life();
+        scene->addItem(life[i]);
+        life[i]->setPos(i*20,0);
+    }
 
 
 }

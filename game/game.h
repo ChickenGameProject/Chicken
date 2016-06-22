@@ -6,6 +6,8 @@
 #include <QMouseEvent>
 #include <QString>
 #include "player.h"
+#include <QVector>
+#include "life.h"
 
 class Game : public QGraphicsView{
     Q_OBJECT
@@ -23,6 +25,7 @@ public slots:
 
 private:
      Player * ship1;
+     QVector<Life*> life;
 };
 
 

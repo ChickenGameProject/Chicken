@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     chicken_level_2.cpp \
     button.cpp \
     bullet.cpp \
-    bullet_level_1.cpp
+    bullet_level_1.cpp \
+    life.cpp
 
 HEADERS  += \
     game.h \
@@ -34,7 +35,8 @@ HEADERS  += \
     chicken_level_2.h \
     button.h \
     bullet.h \
-    bullet_level_1.h
+    bullet_level_1.h \
+    life.h
 
 RESOURCES += \
     resource.qrc

@@ -5,14 +5,9 @@
 
 class Life : public QGraphicsPixmapItem
 {
-    Q_OBJECT
 public:
-    explicit Life(QObject *parent = 0);
-
-signals:
-
-public slots:
-
+   Life(QObject *parent = 0);
+   int static numberOfLife;
 };
 
 #endif // LIFE_H
