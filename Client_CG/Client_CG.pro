@@ -17,3 +17,6 @@ SOURCES += main.cpp \
 
 HEADERS  += \
     client.h
+
+RESOURCES += \
+    res.qrc
