@@ -1,7 +1,11 @@
 #include "server.h"
+#include<QDebug>
+#include<QGraphicsView>
+#include<QGraphicsScene>
 
-Server::Server(QWidget *parent) : QWidget(parent)
-{
+Server::Server(QWidget *parent) : QWidget(parent){
+
+
     m_server=new QTcpServer(this);
     if (!m_server->listen(QHostAddress::Any, 52693)) {
         qDebug()<<"Connection failde"<<m_server->errorString();

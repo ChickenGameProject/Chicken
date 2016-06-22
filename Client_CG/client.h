@@ -5,12 +5,16 @@
 #include<QTcpSocket>
 #include<QString>
 #include<QTcpServer>
+#include<QGraphicsView>
+#include<QGraphicsScene>
 
 class Client : public QWidget
 {
     Q_OBJECT
 public:
     explicit Client(QWidget *parent = 0);
+    QGraphicsScene *scene;
+    QGraphicsView *view;
 
 signals:
 

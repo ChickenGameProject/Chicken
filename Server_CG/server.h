@@ -4,12 +4,15 @@
 #include <QWidget>
 #include<QTcpServer>
 #include<QTcpSocket>
+#include<QGraphicsScene>
+#include<QGraphicsView>
 
 class Server : public QWidget
 {
     Q_OBJECT
 public:
     explicit Server(QWidget *parent = 0);
+
 
 private slots:
     void newConnection();
