@@ -4,7 +4,7 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QMouseEvent>
-//#include <QObject>
+#include <QString>
 #include "player.h"
 
 class Game : public QGraphicsView{
@@ -16,6 +16,7 @@ public:
 
     void displayMenu();
     void mouseMoveEvent(QMouseEvent *event);
+    void setPlayer();
 
 public slots:
     void start();

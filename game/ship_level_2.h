@@ -7,6 +7,7 @@ class ship_level_2:public Player{
 public:
     ship_level_2();
     void keyPressEvent(QKeyEvent * event);
+    void fire();
     //void mouseMoveEvent(QMouseEvent *event);
 };
 

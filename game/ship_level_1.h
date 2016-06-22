@@ -11,7 +11,8 @@ class ship_level_1 : public Player
 public:
     ship_level_1();
     void keyPressEvent(QKeyEvent * event);
-    void mouseMoveEvent(QMouseEvent *event);
+   // void mouseMoveEvent(QMouseEvent *event);
+    void fire();
 
 private:
     QPixmap  ship1;

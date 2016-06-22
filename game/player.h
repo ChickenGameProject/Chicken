@@ -12,6 +12,7 @@ public:
      Player();
      //virtual ~Player(){}
      virtual void keyPressEvent(QKeyEvent * event)=0;
+     virtual void fire()=0;
      //virtual void mouseMoveEvent(QMouseEvent *event)=0;
 };
 

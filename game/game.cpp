@@ -9,14 +9,19 @@
 extern Game * game;
 Game::Game(QWidget *parent){
 
+    // view
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(1000,800);
+    setFixedSize(1400,800);
 
-
+    // scene
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,1000,800);
+    scene->setSceneRect(0,0,1400,800);
     setScene(scene);
+
+    ship1 = NULL;
+
+    setMouseTracking(true);
 
 }
 
@@ -46,6 +51,23 @@ void Game::mouseMoveEvent(QMouseEvent *event){
     }
 }
 
+void Game::setPlayer(){
+    // if player exits
+    if (ship1){
+        scene->removeItem(ship1);
+        delete ship1 ;
+    }
+
+    // player does'nt exist
+    ship1 = new ship_level_1();
+    ship1->setFlag(QGraphicsItem::ItemIsFocusable);
+    ship1->setFocus();
+    ship1->setPos(width()/2,height()/2);
+    scene->addItem(ship1);
+
+
+}
+
 void Game::start(){
 
     // clean scene
@@ -54,20 +76,8 @@ void Game::start(){
     // set background of game
     game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png")));
 
-    // add player
-    //ship_level_1  ship;
-    ship1 = new ship_level_1();
-    //ship1 =  &ship;
-
-
-    ship1->setFlag(QGraphicsItem::ItemIsFocusable);
-    ship1->setFocus();
-
-    ship1->setPos(width()/2,height()/2);
-    scene->addItem(ship1);
-
-    //scene->addItem(&ship);
-//    ship.setPos(200,200);
+    // set player
+    setPlayer();
 
 
 
