@@ -16,10 +16,8 @@ SOURCES += main.cpp \
     game.cpp \
     player.cpp \
     ship_level_1.cpp \
-    ship_level_2.cpp \
     chicken.cpp \
     chicken_level_1.cpp \
-    chicken_level_2.cpp \
     button.cpp \
     bullet.cpp \
     bullet_level_1.cpp \
@@ -29,10 +27,8 @@ HEADERS  += \
     game.h \
     player.h \
     ship_level_1.h \
-    ship_level_2.h \
     chicken.h \
     chicken_level_1.h \
-    chicken_level_2.h \
     button.h \
     bullet.h \
     bullet_level_1.h \
