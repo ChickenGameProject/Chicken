@@ -2,41 +2,91 @@
 #include<QDebug>
 #include<QBrush>
 #include<QImage>
+#include <QGraphicsPixmapItem>
+#include<QGraphicsScene>
+#include<QGraphicsView>
+//#include"game.h"
+
+
 
 Client::Client(QWidget *parent) : QWidget(parent){
       m_socket=new QTcpSocket;
       m_socket->connectToHost("0.0.0.0",52693);
       qDebug()<<"connected to"<<m_socket->localAddress()<<"   port:  "<<52693;
+      view=new QGraphicsView();
+
+
 
       connect(m_socket, SIGNAL(readyRead()), this, SLOT(readMessage()));
       //connect(m_socket, SIGNAL(connected()), this, SLOT(connectedToServer()));
       connect(m_socket, SIGNAL(disconnected()), this, SLOT(disconnectByServer()));
-     /* scene=new QGraphicsScene();
-      scene->setSceneRect(0,0,1375,800);
-      view=new QGraphicsView();
 
-       view->setBackgroundBrush(QImage(":/image/D:/AP_project/nature/12.jpg"));
-       view->setScene(scene);
-
-
-
-      view->setFixedSize(1375,800);
-      view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-      view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);*/
-      scene=new QGraphicsScene();
-      scene->setBackgroundBrush(QBrush(QImage(":/image/images.jpg")));
-      //scene->addItem(client);
-      //client->setFlag(QGraphicsItem::ItemIsFocusable);
-      //client->setFocus();
-      view=new QGraphicsView(scene);
       view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
       view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-      view->show();
-      view->setFixedSize(600,600);
-      scene->setSceneRect(0,0,600,600);
+      setFixedSize(1000,800);
+      scene = new QGraphicsScene();
+      scene->setSceneRect(0,0,1000,800);
+      view->setScene(scene);
+      displayMenu();
 
 
 
+}
+
+void Client::displayMenu()
+{
+    // set background for Menu
+    view->setBackgroundBrush((QImage("C:\\Users\\acer\\Documents\\Ap_Project\\Client_CG\\background.jpg")));
+/*
+    // creat Button start
+    Button *sstart;
+    sstart = new Button("E:\\game\\sprites\\start1.jpg");
+    sstart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+    connect(sstart,SIGNAL(clicked()),this,SLOT(start()));
+    scene->addItem(sstart);
+
+    // creat Buttom exit
+    Button * exit;
+    exit = new Button("E:\\game\\sprites\\start1.jpg");
+    exit->setPos(width()/2 - 100,(height()/2));
+    connect(exit,SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(exit);
+    */
+}
+
+void Client::mouseMoveEvent(QMouseEvent *event)
+{
+    /*
+    if(ship1){
+        ship1->setPos(event->pos());
+    }*/
+}
+
+void Client::start()
+{
+    // clean scene
+    scene->clear();
+
+    // set background of game
+    scene->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png")));
+/*
+    // add player
+    //ship_level_1  ship;
+    ship1 = new ship_level_1();
+    //ship1 =  &ship;
+
+
+    ship1->setFlag(QGraphicsItem::ItemIsFocusable);
+    ship1->setFocus();
+
+    ship1->setPos(width()/2,height()/2);
+    scene->addItem(ship1);
+
+    //scene->addItem(&ship);
+//    ship.setPos(200,200);
+
+
+ */
 }
 
 void Client::readMessage(){
@@ -60,4 +110,7 @@ void Client::readMessage(){
 void Client::disconnectByServer(){
     m_socket->close();
 }
+/*Qstring message="1"+QChar(23);
+
+    m_socket->write(message.toLocal8Bit());*/
 
