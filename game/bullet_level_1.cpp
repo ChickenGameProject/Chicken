@@ -26,7 +26,7 @@ void Bullet_level_1::move(){
         delete this;
     }
 
-    int STEP_SIZE = 30;
+    int STEP_SIZE = 30; // sorat !!!
     double theta = rotation(); // degrees
 
     double dy = STEP_SIZE * qSin(qDegreesToRadians(theta));
