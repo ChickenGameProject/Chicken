@@ -10,7 +10,7 @@
 #include <QMouseEvent>
 //#include "player.h"
 
-class Client : public QWidget
+class Client : /*public QWidget*/ public QGraphicsView
 {
     Q_OBJECT
 public:

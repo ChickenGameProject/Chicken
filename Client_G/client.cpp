@@ -8,12 +8,12 @@
 #include<QMediaPlayer>
 
 
-QGraphicsView* view;
-Client::Client(QWidget *parent) : QWidget(parent){
+//QGraphicsView* view;
+Client::Client(QWidget *parent) /*: QWidget(parent)*/{
       m_socket=new QTcpSocket;
       m_socket->connectToHost("0.0.0.0",52693);
       qDebug()<<"connected to"<<m_socket->localAddress()<<"   port:  "<<52693;
-      view=new QGraphicsView();
+      //view=new QGraphicsView();
 
 
 
@@ -21,14 +21,18 @@ Client::Client(QWidget *parent) : QWidget(parent){
       //connect(m_socket, SIGNAL(connected()), this, SLOT(connectedToServer()));
       connect(m_socket, SIGNAL(disconnected()), this, SLOT(disconnectByServer()));
 
-      view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-      view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-      view->setFixedSize(1375,800);
+//      view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+//      view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+//      view->setFixedSize(1375,800);
+      setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+      setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+      setFixedSize(1375,800);
       scene = new QGraphicsScene();
       scene->setSceneRect(0,0,1375,800);
-      view->setScene(scene);
+//      view->setScene(scene);
+      setScene(scene);
       displayMenu();
-      view->show();
+      //view->show();
 
 
 
@@ -38,7 +42,8 @@ Client::Client(QWidget *parent) : QWidget(parent){
 void Client::displayMenu()
 {
     // set background for Menu
-    view->setBackgroundBrush(QBrush(QImage(":/image/blog_test_background_bright.jpg")));
+//    view->setBackgroundBrush(QBrush(QImage(":/image/blog_test_background_bright.jpg")));
+    setBackgroundBrush(QBrush(QImage(":/image/blog_test_background_bright.jpg")));
     QMediaPlayer* music=new QMediaPlayer();
     music->setMedia(QUrl(":/sounds/02 dishab (www.ganja2music.us).mp3"));
     music->play();
@@ -76,7 +81,8 @@ void Client::start()
     scene->clear();
 
     // set background of game
-    view->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png"))); //change scene to view
+//    view->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png"))); //change scene to view
+    setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png"))); //change scene to view
 /*
     // add player
     //ship_level_1  ship;
