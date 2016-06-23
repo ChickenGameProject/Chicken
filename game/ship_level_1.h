@@ -6,8 +6,8 @@
 #include <QPixmap>
 
 
-class ship_level_1 : public Player
-{
+class ship_level_1 : public Player{
+    Q_OBJECT
 public:
     ship_level_1();
     void keyPressEvent(QKeyEvent * event);

@@ -2,9 +2,12 @@
 #include "button.h"
 #include "player.h"
 #include "ship_level_1.h"
-#include "ship_level_2.h"
+//#include "ship_level_2.h"
 #include <QDebug>
 #include <QGraphicsPixmapItem>
+#include "score.h"
+#include <QTimer>
+
 
 extern Game * game;
 Game::Game(QWidget *parent){
@@ -68,6 +71,17 @@ void Game::setPlayer(){
 
 }
 
+void Game::decreaseLife(){
+    // remove from scene
+    scene->removeItem( life[Life::numberOfLife-1]);
+    // delete the pointer
+    delete life[Life::numberOfLife-1];
+    life.pop_back();
+    // decrease the static numberOfLife
+    life[0]->decreas();
+
+}
+
 void Game::start(){
 
     // clean scene
@@ -79,6 +93,24 @@ void Game::start(){
     // set player
     setPlayer();
 
+    // add life
+    life.resize(Life::numberOfLife);
+
+    for (int i=0;i<Life::numberOfLife;i++){
+        life[i] = new Life();
+        scene->addItem(life[i]);
+        life[i]->setPos(i*20,0);
+    }
+
+    // add score
+    score = new Score();
+    scene->addItem(score);
+    score->setPos(width()-250,0);
+
+    // add bomb every 4 second
+    QTimer * timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
+    timer->start(4000);
 
 
 }

@@ -6,6 +6,9 @@
 #include <QMouseEvent>
 #include <QString>
 #include "player.h"
+#include <QVector>
+#include "life.h"
+#include "score.h"
 
 class Game : public QGraphicsView{
     Q_OBJECT
@@ -17,12 +20,15 @@ public:
     void displayMenu();
     void mouseMoveEvent(QMouseEvent *event);
     void setPlayer();
+    void decreaseLife();
 
 public slots:
     void start();
-
 private:
      Player * ship1;
+     QVector<Life*> life;
+     Score * score;
+
 };
 
 

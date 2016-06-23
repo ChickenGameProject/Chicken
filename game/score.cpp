@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include"score.h"
 #include<QFont>
 Score::Score(QGraphicsItem *parent):QGraphicsTextItem(parent){
@@ -19,3 +20,25 @@ Score::Score(QGraphicsItem *parent):QGraphicsTextItem(parent){
         return score;
     }
 
+=======
+#include "score.h"
+#include <QFont>
+
+Score::Score(QObject *parent){
+    // initialize the score to 0
+    score =0;
+
+    // draw the text
+    setPlainText(QString("Score: ") + QString::number(score));
+    setDefaultTextColor(Qt::darkBlue);
+    setFont(QFont("times",16));
+}
+
+void Score::increas(int num){
+    score += num;
+}
+
+int Score::getscore(){
+    return score;
+}
+>>>>>>> b5f792f708ec117f5db4839b00ab11d00476a77e
