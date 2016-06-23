@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 3.5.1, 2016-06-23T08:38:08. -->
-=======
-<!-- Written by QtCreator 3.5.1, 2016-06-22T22:45:37. -->
->>>>>>> 6c22fbf786046e574f7b04dab20f2e746a56f3b7
+<!-- Written by QtCreator 3.5.1, 2016-06-23T09:17:25. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -231,13 +227,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Client_CG</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/NP/Documents/ap/Client_CG/Client_CG.pro</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Client_CG2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/acer/Documents/Ap_Project/Client_CG/Client_CG.pro</value>
->>>>>>> 6c22fbf786046e574f7b04dab20f2e746a56f3b7
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Client_CG.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
