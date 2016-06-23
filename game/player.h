@@ -5,15 +5,19 @@
 #include <QObject>
 #include <QKeyEvent>
 #include <QMouseEvent>
+#include <QObject>
 
 //base class
-class Player:public QGraphicsPixmapItem{
+class Player:public QObject, public QGraphicsPixmapItem{
+    Q_OBJECT
 public:
      Player();
-     //virtual ~Player(){}
+     virtual ~Player(){}
      virtual void keyPressEvent(QKeyEvent * event)=0;
      virtual void fire()=0;
-     //virtual void mouseMoveEvent(QMouseEvent *event)=0;
+public slots:
+     void spawn();
+
 };
 
 #endif // PLAYER_H

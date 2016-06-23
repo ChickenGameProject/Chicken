@@ -8,7 +8,6 @@ extern Game * game;
 ship_level_1::ship_level_1(){
     ship1 = QPixmap("E:\\game\\sprites\\spaceship1_1.png");
     setPixmap(ship1);
-    qDebug()<<"ctor ship_level_1";
 }
 
 void ship_level_1::keyPressEvent(QKeyEvent *event){
