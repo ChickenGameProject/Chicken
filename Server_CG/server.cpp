@@ -2,6 +2,7 @@
 #include<QDebug>
 #include<QGraphicsView>
 #include<QGraphicsScene>
+#include<QMediaPlayer>
 
 Server::Server(QWidget *parent) : QWidget(parent){
 
@@ -12,6 +13,9 @@ Server::Server(QWidget *parent) : QWidget(parent){
             return;
     }
     connect(m_server, SIGNAL(newConnection()), this, SLOT(newConnection()));
+    QMediaPlayer* music=new QMediaPlayer();
+    music->setMedia(QUrl(":/sounds/01 - Dj Ebram 01 (2014).mp3"));
+    music->play();
 
 }
 

@@ -35,7 +35,7 @@ Client::Client(QWidget *parent) : QWidget(parent){
 void Client::displayMenu()
 {
     // set background for Menu
-    view->setBackgroundBrush((QImage("C:\\Users\\acer\\Documents\\Ap_Project\\Client_CG\\background.jpg")));
+    view->setBackgroundBrush((QImage(":/image/backgroung.png")));
 /*
     // creat Button start
     Button *sstart;
@@ -67,7 +67,7 @@ void Client::start()
     scene->clear();
 
     // set background of game
-    view->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png")));
+    view->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png"))); //change scene to view
 /*
     // add player
     //ship_level_1  ship;
