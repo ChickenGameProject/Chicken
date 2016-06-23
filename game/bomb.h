@@ -10,6 +10,8 @@ public:
     Bomb();
 public slots:
     void move();
+private:
+    QPixmap bomb;
 };
 
 #endif // BOMB_GIFT_H

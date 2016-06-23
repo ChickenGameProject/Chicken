@@ -9,12 +9,15 @@
 #include <typeinfo>
 #include "game.h"
 #include "life.h"
+#include <stdlib.h>
+#include <windows.h>
 
 extern Game * game;
 Bomb::Bomb(){
     qDebug()<<"ctor bomb";
     // set pixmap
-    setPixmap(QPixmap("E:\\game\\sprites\\bomb.png"));
+    bomb = (QPixmap("E:\\game\\sprites\\bomb.png"));
+    setPixmap(bomb);
 
     // set the random position
     int random_number = rand() % 1500;
@@ -37,18 +40,24 @@ void Bomb::move(){
     for (int i = 0, n = colliding_items.size(); i < n; ++i){
         if (typeid(*(colliding_items[i])) == typeid(ship_level_1)){
             qDebug()<<"colliding";
-            // decreas the life
-           // Life::decreas();
 
-            // remove them from the scene (still on the heap)
-            //scene()->removeItem(colliding_items[i]);
+            //
+            bomb = (QPixmap("E:\\game\\sprites\\bomb2.png"));
+            setPixmap(bomb);
+
+           // Sleep(500);
+
+            // decreas the life
+            game->decreaseLife();
+
+            // remove them from the scene
             scene()->removeItem(this);
 
+
+
             // delete them from the heap to save memory
-          //  delete colliding_items[i];
             delete this;
 
-            // return (all code below refers to a non existint bullet)
             return;
         }
     }

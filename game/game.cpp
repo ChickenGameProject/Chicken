@@ -71,6 +71,17 @@ void Game::setPlayer(){
 
 }
 
+void Game::decreaseLife(){
+    // remove from scene
+    scene->removeItem( life[Life::numberOfLife-1]);
+    // delete the pointer
+    delete life[Life::numberOfLife-1];
+    life.pop_back();
+    // decrease the static numberOfLife
+    life[0]->decreas();
+
+}
+
 void Game::start(){
 
     // clean scene
