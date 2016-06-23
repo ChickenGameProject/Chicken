@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       +=network
+QT       +=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,7 +14,9 @@ TARGET = ServerGame
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  +=
+
+RESOURCES += \
+    res.qrc

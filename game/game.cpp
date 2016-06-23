@@ -2,7 +2,7 @@
 #include "button.h"
 #include "player.h"
 #include "ship_level_1.h"
-#include "ship_level_2.h"
+//#include "ship_level_2.h"
 #include <QDebug>
 #include <QGraphicsPixmapItem>
 #include "score.h"

@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       +=network
+QT       +=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,7 +14,11 @@ TARGET = Client_G
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp \
+    client.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    client.h
+
+RESOURCES += \
+    res.qrc

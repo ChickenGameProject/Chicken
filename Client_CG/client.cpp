@@ -20,13 +20,14 @@ Client::Client(QWidget *parent) : QWidget(parent){
       //connect(m_socket, SIGNAL(connected()), this, SLOT(connectedToServer()));
       connect(m_socket, SIGNAL(disconnected()), this, SLOT(disconnectByServer()));
 
-      view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-      view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-      setFixedSize(1000,800);
+//      view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+//      view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+      view->setFixedSize(1920,1080);
       scene = new QGraphicsScene();
-      scene->setSceneRect(0,0,1000,800);
-      view->setScene(scene);
+      scene->setSceneRect(0,0,1920,1080);
+//      view->setScene(scene);
       displayMenu();
+      view->show();
 
 
 
@@ -35,7 +36,15 @@ Client::Client(QWidget *parent) : QWidget(parent){
 void Client::displayMenu()
 {
     // set background for Menu
-    view->setBackgroundBrush((QImage(":/image/backgroung.png")));
+    view->setBackgroundBrush(QBrush(QImage(":/new/prefix1/images.jpg")));
+//      scene->setBackgroundBrush(QBrush(QColor(0, 0, 0)));
+//    scene->addEllipse(0, 0, 30, 30)->setBrush(QBrush(QColor(0, 0, 0)));
+//    scene->addRect(10, 10, 100, 100, QPen(QColor(0, 0, 0)), QBrush(QColor(0, 0, 0)));
+//      scene->addText("Hello World!");
+//      scene->setBackgroundBrush(QBrush(QImage(":/image/backgroung.png")));
+    /*
+
+    scene->setBackgroundBrush(QBrush(QColor(0, 0, 0)));
 /*
     // creat Button start
     Button *sstart;

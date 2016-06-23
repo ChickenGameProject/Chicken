@@ -6,6 +6,7 @@
 #include<QTcpSocket>
 #include<QGraphicsScene>
 #include<QGraphicsView>
+#include<QList>
 
 class Server : public QWidget
 {
