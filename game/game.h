@@ -24,7 +24,7 @@ public:
 
 public slots:
     void start();
-private:
+public:
      Player * ship1;
      QVector<Life*> life;
      Score * score;

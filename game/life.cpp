@@ -5,7 +5,4 @@ Life::Life(QObject *parent){
     setPixmap(QPixmap("E:\\game\\sprites\\life.png"));
 }
 
-void Life::decreas(){
-    numberOfLife--;
-}
 

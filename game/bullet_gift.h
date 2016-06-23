@@ -8,6 +8,8 @@ class Bullet_gift : public gift
 public:
     Bullet_gift();
     void move();
+private:
+    QPixmap bulletgift;
 };
 
 #endif // BULLET_GIFT_H

@@ -2,7 +2,6 @@
 #include "button.h"
 #include "player.h"
 #include "ship_level_1.h"
-#include "ship_level_2.h"
 #include <QDebug>
 #include <QGraphicsPixmapItem>
 #include "score.h"
@@ -63,11 +62,12 @@ void Game::setPlayer(){
 
     // player does'nt exist
     ship1 = new ship_level_1();
+    //
     ship1->setFlag(QGraphicsItem::ItemIsFocusable);
     ship1->setFocus();
+    //
     ship1->setPos(width()/2,height()/2);
     scene->addItem(ship1);
-
 
 }
 
@@ -78,7 +78,7 @@ void Game::decreaseLife(){
     delete life[Life::numberOfLife-1];
     life.pop_back();
     // decrease the static numberOfLife
-    life[0]->decreas();
+    Life::numberOfLife--;
 
 }
 
@@ -88,7 +88,7 @@ void Game::start(){
     scene->clear();
 
     // set background of game
-    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png")));
+    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
 
     // set player
     setPlayer();
@@ -111,6 +111,8 @@ void Game::start(){
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
     timer->start(4000);
+
+    // add chicken
 
 
 }
