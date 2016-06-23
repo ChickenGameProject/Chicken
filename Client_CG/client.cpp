@@ -5,7 +5,6 @@
 #include <QGraphicsPixmapItem>
 #include<QGraphicsScene>
 #include<QGraphicsView>
-//#include"game.h"
 
 
 
@@ -68,7 +67,7 @@ void Client::start()
     scene->clear();
 
     // set background of game
-    scene->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png")));
+    view->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png")));
 /*
     // add player
     //ship_level_1  ship;
