@@ -1,10 +1,15 @@
 #ifndef BOMB_GIFT_H
 #define BOMB_GIFT_H
 
-class Bomb_gift : public gift
-{
+#include <QGraphicsPixmapItem>
+#include <QObject>
+
+class Bomb :public QObject, public QGraphicsPixmapItem{
+    Q_OBJECT
 public:
-    Bomb_gift();
+    Bomb();
+public slots:
+    void move();
 };
 
 #endif // BOMB_GIFT_H

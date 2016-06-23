@@ -5,6 +5,9 @@
 #include "ship_level_2.h"
 #include <QDebug>
 #include <QGraphicsPixmapItem>
+#include "score.h"
+#include <QTimer>
+
 
 extern Game * game;
 Game::Game(QWidget *parent){
@@ -87,6 +90,16 @@ void Game::start(){
         scene->addItem(life[i]);
         life[i]->setPos(i*20,0);
     }
+
+    // add score
+    score = new Score();
+    scene->addItem(score);
+    score->setPos(width()-250,0);
+
+    // add bomb every 4 second
+    QTimer * timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
+    timer->start(4000);
 
 
 }

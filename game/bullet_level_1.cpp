@@ -5,7 +5,7 @@
 
 extern Game * game;
 Bullet_level_1::Bullet_level_1(){
-    setPixmap(QPixmap("E:\\game\\sprites\\bullet1.png"));
+    setPixmap(QPixmap("E:\\game\\sprites\\bul.png"));
 
     // make/connect a timer to move() the bullet every so often
     QTimer * timer = new QTimer(this);
