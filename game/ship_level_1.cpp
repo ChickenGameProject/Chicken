@@ -53,7 +53,7 @@ void ship_level_1::fire(){
         bullet2->setRotation(angle+15);
         game->scene->addItem(bullet2);
     }
-    else if (game->level->getlevel() == 3 ){
+    else if (game->level->getlevel() >= 3 ){
         // creat new bullet
         Bullet * bullet1;
         Bullet * bullet2;

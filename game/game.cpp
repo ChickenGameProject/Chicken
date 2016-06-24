@@ -14,11 +14,11 @@ Game::Game(QWidget *parent){
     // view
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(1400,800);
+    setFixedSize(1375,800);
 
     // scene
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,1400,800);
+    scene->setSceneRect(0,0,1375,800);
     setScene(scene);
 
     ship1 = NULL;
@@ -100,7 +100,6 @@ void Game::increaseLife(){
     // add to scene
     scene->addItem(life[Life::numberOfLife-1]);
     life[Life::numberOfLife-1]->setPos(life[Life::numberOfLife-2]->x()+20,life[Life::numberOfLife-2]->y());
-
 
 }
 
