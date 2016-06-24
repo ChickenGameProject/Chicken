@@ -35,7 +35,7 @@ void chicken_level_1::move(){
     for(int i=0,n=colliding_items.size();i<n;i++){
         if(typeid(*(colliding_items[i]))==typeid(Bullet_level_1)){
             //inctrese score
-            game->score->increase(3);
+            game->score->increase(10);
 
 
            int randomNumber=(rand()%5);
