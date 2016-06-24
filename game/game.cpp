@@ -6,7 +6,7 @@
 #include <QGraphicsPixmapItem>
 #include "score.h"
 #include <QTimer>
-
+#include <QPoint>
 
 extern Game * game;
 Game::Game(QWidget *parent){
@@ -24,6 +24,7 @@ Game::Game(QWidget *parent){
     ship1 = NULL;
 
     setMouseTracking(true);
+
 
 }
 
@@ -44,13 +45,18 @@ void Game::displayMenu(){
     exit->setPos(width()/2 - 100,(height()/2));
     connect(exit,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(exit);
-
 }
 
 void Game::mouseMoveEvent(QMouseEvent *event){
     if(ship1){
-        ship1->setPos(event->pos());
+        QPoint a = event->pos();
+        if (a.y()<200){
+            ship1->setPos(a.x(),200);
+        }else{
+        ship1->setPos(a);}
     }
+
+
 }
 
 void Game::setPlayer(){

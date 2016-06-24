@@ -35,7 +35,7 @@ Client::Client(QWidget *parent) : QWidget(parent){
 void Client::displayMenu()
 {
     // set background for Menu
-    view->setBackgroundBrush((QImage(":/image/backgroung.png")));
+    view->setBackgroundBrush((QImage("E:\\game\\sprites\\backg.jpg")));
 /*
     // creat Button start
     Button *sstart;
