@@ -18,9 +18,19 @@ void Score::increase(int change){
     score+=change;
     setPlainText(QString("Score: ") + QString::number(score));
 
-    if (game->score->getScore()== 50){
-        game->level->increase();
+    if (score>=game->level->getlevel()*50 ){
+        game->level->increase();// level 2
     }
+    if (score>=game->level->getlevel()*100){
+        game->level->increase(); // level 3
+    }
+    else if (score>=game->level->getlevel()*200){
+        game->level->increase(); // level 4
+    }
+    else if (score>=game->level->getlevel()*400){
+        game->level->increase(); // level 5
+    }
+
 }
 
 int Score::getScore(){

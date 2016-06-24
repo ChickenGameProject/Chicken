@@ -42,7 +42,7 @@ void Bomb::move(){
             qDebug()<<"colliding";
 
             //
-            game->score->increase(20);
+
 
            // bomb.load("E:\\game\\sprites\\bomb2.png");
           //  bomb = (QPixmap("E:\\game\\sprites\\bomb2.png"));
