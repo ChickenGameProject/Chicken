@@ -18,7 +18,7 @@ chicken_level_1::chicken_level_1(){
         setPos(random_number,100);
          //draw a enemy
         setPixmap(QPixmap("E:\\game\\sprites\\a.png"));
-        setTransformOriginPoint(220,70);
+        setTransformOriginPoint(250,70);
         //setRotation(180);
          //connect
         QTimer *timer=new QTimer();
