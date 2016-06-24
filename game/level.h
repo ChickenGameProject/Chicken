@@ -1,12 +1,15 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include <QGraphicsPixmapItem>
+#include <QGraphicsTextItem>
 
-class Level : public QGraphicsPixmapItem
-{
+class Level : public QGraphicsTextItem{
 public:
     Level();
+    void increase();
+    int getlevel();
+private:
+    int level;
 };
 
 #endif // LEVEL_H

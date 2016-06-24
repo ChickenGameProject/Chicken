@@ -2,4 +2,5 @@
 
 gift::gift(QObject *parent){
 
+    setPixmap(QPixmap(""));
 }

@@ -26,7 +26,10 @@ SOURCES += main.cpp \
     bullet_gift.cpp \
     bomb.cpp \
     leaf_gift.cpp \
-    bullet_level_2.cpp
+    bullet_level_2.cpp \
+    score.cpp \
+    level.cpp \
+    chicken_level_2.cpp
 HEADERS  += \
     game.h \
     player.h \
@@ -41,7 +44,10 @@ HEADERS  += \
     bullet_gift.h \
     bomb.h \
     leaf_gift.h \
-    bullet_level_2.h
+    bullet_level_2.h \
+    score.h \
+    level.h \
+    chicken_level_2.h
 RESOURCES += \
     resource.qrc \
     res.qrc
