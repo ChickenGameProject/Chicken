@@ -51,3 +51,6 @@ HEADERS  += \
 RESOURCES += \
     resource.qrc \
     res.qrc
+
+DISTFILES += \
+    heart_num

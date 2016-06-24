@@ -42,9 +42,6 @@ Client::Client(QWidget *parent) /*: QWidget(parent)*/{
 void Client::displayMenu()
 {
     // set background for Menu
-<<<<<<< HEAD:Client_CG/client.cpp
-    view->setBackgroundBrush((QImage("E:\\game\\sprites\\backg.jpg")));
-=======
 //    view->setBackgroundBrush(QBrush(QImage(":/image/blog_test_background_bright.jpg")));
     setBackgroundBrush(QBrush(QImage(":/image/blog_test_background_bright.jpg")));
     QMediaPlayer* music=new QMediaPlayer();

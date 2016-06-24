@@ -1,4 +1,7 @@
 #include "life.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
 
 void Write(int num){
 

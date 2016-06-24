@@ -7,6 +7,7 @@
 #include "bullet_gift.h"
 #include "leaf_gift.h"
 #include "gift.h"
+#include <QDebug>
 
 extern Game * game;
 chicken_level_1::chicken_level_1(){
@@ -42,8 +43,9 @@ void chicken_level_1::move(){
             delete this;
             return;
 
-            int randomNumber=(rand()%2)+1;
+            int randomNumber=(rand()/2)+1;
             if(randomNumber==1){
+                qDebug()<<"in";
                 gift * gift1;
                 gift1 =new Bullet_gift();
                 scene()->addItem(gift1);
