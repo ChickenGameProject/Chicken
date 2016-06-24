@@ -9,6 +9,7 @@
 #include <QVector>
 #include "life.h"
 #include "score.h"
+#include "level.h"
 
 class Game : public QGraphicsView{
     Q_OBJECT
@@ -24,11 +25,11 @@ public:
 
 public slots:
     void start();
-private:
+public:
      Player * ship1;
      QVector<Life*> life;
      Score * score;
-
+     Level * level;
 };
 
 

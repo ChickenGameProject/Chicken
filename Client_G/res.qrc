@@ -4,6 +4,5 @@
     </qresource>
     <qresource prefix="/sounds">
         <file>01 - Dj Ebram 01 (2014).mp3</file>
-        <file>02 dishab (www.ganja2music.us).mp3</file>
     </qresource>
 </RCC>

@@ -21,17 +21,15 @@ SOURCES += main.cpp \
     button.cpp \
     bullet.cpp \
     bullet_level_1.cpp \
-<<<<<<< HEAD
-    score.cpp
-=======
     life.cpp \
-    score.cpp \
     gift.cpp \
     bullet_gift.cpp \
     bomb.cpp \
-    leaf_gift.cpp
->>>>>>> b5f792f708ec117f5db4839b00ab11d00476a77e
-
+    leaf_gift.cpp \
+    bullet_level_2.cpp \
+    score.cpp \
+    level.cpp \
+    chicken_level_2.cpp
 HEADERS  += \
     game.h \
     player.h \
@@ -41,17 +39,18 @@ HEADERS  += \
     button.h \
     bullet.h \
     bullet_level_1.h \
-<<<<<<< HEAD
-    score.h
-=======
     life.h \
-    score.h \
     gift.h \
     bullet_gift.h \
     bomb.h \
-    leaf_gift.h
->>>>>>> b5f792f708ec117f5db4839b00ab11d00476a77e
-
+    leaf_gift.h \
+    bullet_level_2.h \
+    score.h \
+    level.h \
+    chicken_level_2.h
 RESOURCES += \
     resource.qrc \
     res.qrc
+
+DISTFILES += \
+    heart_num

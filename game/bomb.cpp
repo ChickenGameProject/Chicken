@@ -42,18 +42,19 @@ void Bomb::move(){
             qDebug()<<"colliding";
 
             //
-            bomb = (QPixmap("E:\\game\\sprites\\bomb2.png"));
-            setPixmap(bomb);
+            game->score->increase(20);
 
-           // Sleep(500);
+           // bomb.load("E:\\game\\sprites\\bomb2.png");
+          //  bomb = (QPixmap("E:\\game\\sprites\\bomb2.png"));
+          //  setPixmap(bomb);
+
+           //   Sleep(500);
 
             // decreas the life
             game->decreaseLife();
 
             // remove them from the scene
             scene()->removeItem(this);
-
-
 
             // delete them from the heap to save memory
             delete this;
