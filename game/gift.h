@@ -4,8 +4,7 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 
-class gift :public QObject, public QGraphicsPixmapItem
-{
+class gift :public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     explicit gift(QObject *parent = 0);

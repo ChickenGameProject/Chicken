@@ -29,32 +29,35 @@ chicken_level_1::chicken_level_1(){
 
 void chicken_level_1::move(){
 
+
     //if bullet collides whth enemy
     QList<QGraphicsItem*>colliding_items=collidingItems();
     for(int i=0,n=colliding_items.size();i<n;i++){
         if(typeid(*(colliding_items[i]))==typeid(Bullet_level_1)){
             //inctrese score
-            game->score->increase(5);
-            //remove them
-            scene()->removeItem(colliding_items[i]);
-            scene()->removeItem(this);
-            //delete then both
-            delete colliding_items[i];
-            delete this;
-            return;
+            game->score->increase(3);
 
-            int randomNumber=(rand()/2)+1;
-            if(randomNumber==1){
-                qDebug()<<"in";
-                gift * gift1;
-                gift1 =new Bullet_gift();
-                scene()->addItem(gift1);
+
+           int randomNumber=(rand()%5);
+           if(randomNumber==1){
+               gift * gift2;
+               gift2 =new Leaf_Gift();
+               scene()->addItem(gift2);
+               gift2->setPos(this->x(),this->y());
             }
-           else if(randomNumber==2){
-                gift * gift2;
-                gift2 =new Leaf_Gift();
-                scene()->addItem(gift2);
+           else {
+               Bullet_gift * gift1;
+               gift1 =new Bullet_gift();
+               scene()->addItem(gift1);
+               game->scene->addItem(gift1);
+               gift1->setPos(this->x(),this->y());
             }
+           scene()->removeItem(colliding_items[i]);
+           scene()->removeItem(this);
+
+           delete colliding_items[i];
+           delete this;
+
         }
     }
      setPos(x()-5,y());

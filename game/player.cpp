@@ -18,6 +18,7 @@ void Player::spawn(){
 }
 
 void Player::spawn2(){
+    if (game->level->getlevel()==1){
 Chicken * chicken1;
 Chicken * chicken2;
 Chicken * chicken3;
@@ -30,6 +31,14 @@ chicken3->setPos(x(),y()-500);
 scene()->addItem(chicken1);
 scene()->addItem(chicken2);
 scene()->addItem(chicken3);
+    }
+
+   // else if(game->level->getlevel()==2){
+
+    //}
+    //else if (game->level->getlevel() == 3){
+
+    //}
 }
 
 
