@@ -23,6 +23,7 @@ public:
     void setPlayer();
     void decreaseLife();
     void increaseLife();
+    void GameOver();
 
 public slots:
     void start();

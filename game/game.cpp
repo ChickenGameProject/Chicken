@@ -89,22 +89,8 @@ void Game::decreaseLife(){
    // int num=Life::numberOfLife;
    // life_num->Write(num);
     if(Life::numberOfLife==0){
-        scene->clear();
-        game->setBackgroundBrush(QBrush(QImage("")));//a pictire after clear ecene
-
-        // creat Button restart
-        Button * restart;
-        restart = new Button("");// a picture for restart
-        restart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
-        connect(restart,SIGNAL(clicked()),this,SLOT(start()));
-        scene->addItem(restart);
-
-        // creat Buttom exit
-        Button * exitt;
-        exitt = new Button("");//a picture for exit
-        exitt->setPos(width()/2 - 100,(height()/2));
-        connect(exitt,SIGNAL(clicked()),this,SLOT(close()));
-        scene->addItem(exitt);
+        qDebug()<<"in gameover";
+        GameOver();
     }
 
 }
@@ -119,6 +105,25 @@ void Game::increaseLife(){
     scene->addItem(life[Life::numberOfLife-1]);
     life[Life::numberOfLife-1]->setPos(life[Life::numberOfLife-2]->x()+20,life[Life::numberOfLife-2]->y());
 
+}
+
+void Game::GameOver(){
+    scene->clear();
+    game->setBackgroundBrush(QBrush(QImage("")));//a pictire after clear ecene
+
+    // creat Button restart
+    Button * restart;
+    restart = new Button("E:\\game\\sprites\\start1.jpg");// a picture for restart
+    restart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+    connect(restart,SIGNAL(clicked()),this,SLOT(start()));
+    scene->addItem(restart);
+
+    // creat Buttom exit
+    Button * exitt;
+    exitt = new Button("E:\\game\\sprites\\start1.jpg");//a picture for exit
+    exitt->setPos(width()/2 - 100,(height()/2));
+    connect(exitt,SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(exitt);
 }
 
 void Game::start(){
