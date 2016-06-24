@@ -22,6 +22,7 @@ public:
     void mouseMoveEvent(QMouseEvent *event);
     void setPlayer();
     void decreaseLife();
+    void increaseLife();
 
 public slots:
     void start();

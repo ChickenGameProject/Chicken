@@ -8,17 +8,20 @@
 #include "leaf_gift.h"
 #include "gift.h"
 #include <QDebug>
+#include <qmath.h>
 
 extern Game * game;
 chicken_level_1::chicken_level_1(){
 
+
+    //draw a enemy
+   setPixmap(QPixmap("E:\\game\\sprites\\a.png"));
     //set random positin
-        int random_number=rand()%700;
+        //int random_number=rand()%1400;
         //int random_number=rand()%700;
-        setPos(random_number,100);
-         //draw a enemy
-        setPixmap(QPixmap("E:\\game\\sprites\\a.png"));
-        setTransformOriginPoint(250,70);
+        //setPos(random_number,100);
+
+        //setTransformOriginPoint(220,70);
         //setRotation(180);
          //connect
         QTimer *timer=new QTimer();
@@ -35,7 +38,7 @@ void chicken_level_1::move(){
     for(int i=0,n=colliding_items.size();i<n;i++){
         if(typeid(*(colliding_items[i]))==typeid(Bullet_level_1)){
             //inctrese score
-            game->score->increase(3);
+            game->score->increase(10);
 
 
            int randomNumber=(rand()%5);
@@ -60,5 +63,42 @@ void chicken_level_1::move(){
 
         }
     }
-     setPos(x()-5,y());
+
+    // if the chicken is off the screen, destroy it
+    if (pos().y() < 0){
+        scene()->removeItem(this);
+        delete this;
+    }
+
+    int STEP_SIZE = 20; // sorat !!!
+    double theta = rotation(); // degrees
+
+    double dy = STEP_SIZE * qSin(qDegreesToRadians(theta));
+    double dx = STEP_SIZE * qCos(qDegreesToRadians(theta));
+    //-----------------------------------------------------
+    if (game->level->getlevel()==1){
+         setPos(x()+dx, y()+dy);
+    }
+    else if(game->level->getlevel()==2){
+        setPos(x()+dx, y()+dy);
+    }
+    else if (game->level->getlevel()==3){
+        setPos(x()+dx, y()+dy);
+    }
+    else if(game->level->getlevel()==4){
+        setPos(x()+dx, y()+dy);
+    }
+    else if (game->level->getlevel()==5){
+        setPos(x()+dx, y()+dy);
+    }
+
+
+    // set angle
+    //int angle = -90;
+
+    //bullet3->setRotation(angle);
+    //game->scene->addItem(bullet3);
+
+
+    //setPos(x()+dx, y()+dy);
 }

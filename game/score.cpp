@@ -20,8 +20,9 @@ void Score::increase(int change){
 
     if (score>=game->level->getlevel()*50 ){
         game->level->increase();// level 2
+        game->increaseLife();
     }
-    if (score>=game->level->getlevel()*100){
+    else if (score>=game->level->getlevel()*100){
         game->level->increase(); // level 3
     }
     else if (score>=game->level->getlevel()*200){
