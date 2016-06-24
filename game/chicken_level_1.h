@@ -2,11 +2,13 @@
 #define CHICKEN_LEVEL_1_H
 
 #include "chicken.h"
+#include "chicken_level_1.h"
 
 class chicken_level_1 : public Chicken{
     Q_OBJECT
 public:
     chicken_level_1();
+public slots:
     void move();
 };
 

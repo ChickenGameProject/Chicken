@@ -17,6 +17,7 @@ public:
      virtual void fire()=0;
 public slots:
      void spawn();
+     void spawn2();
 
 };
 

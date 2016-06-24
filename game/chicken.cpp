@@ -1,6 +1,5 @@
 #include "chicken.h"
 
-Chicken::Chicken()
-{
-
+Chicken::Chicken(){
+    setPixmap(QPixmap(""));
 }

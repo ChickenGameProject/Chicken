@@ -13,7 +13,8 @@ public:
     void keyPressEvent(QKeyEvent * event);
    // void mouseMoveEvent(QMouseEvent *event);
     void fire();
-
+public slots:
+    void soap();
 private:
     QPixmap  ship1;
 };

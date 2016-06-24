@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.5.1, 2016-06-24T15:40:16. -->
+=======
+<<<<<<< HEAD
+<!-- Written by QtCreator 3.1.1, 2016-06-24T13:51:53. -->
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<!-- Written by QtCreator 3.5.1, 2016-06-24T10:46:20. -->
+=======
+<<<<<<< HEAD
+<!-- Written by QtCreator 3.1.1, 2016-06-23T15:15:58. -->
+<qtcreator>
+ <data>
+=======
+<<<<<<< HEAD
+<!-- Written by QtCreator 3.5.1, 2016-06-23T14:53:12. -->
+=======
+<!-- Written by QtCreator 3.5.1, 2016-06-23T14:29:40. -->
+>>>>>>> b5f792f708ec117f5db4839b00ab11d00476a77e
+>>>>>>> 1a4eb0fc7dee6255f7d9871fa26d3cc474f1fcb6
+>>>>>>> 192488dc15f1b05d82cf43de0f3620680e45490a
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{37455211-0a5c-46cc-a22f-84e568a305d4}</value>
  </data>
  <data>
+<<<<<<< HEAD
+=======
+>>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
+=======
+<!-- Written by QtCreator 3.1.1, 2016-06-24T12:37:01. -->
+>>>>>>> refs/remotes/origin/master
+<qtcreator>
+ <data>
+>>>>>>> a4ca456ae0ce7e0282218980f5c946721648dc5d
+>>>>>>> 192488dc15f1b05d82cf43de0f3620680e45490a
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
   <value type="int">0</value>
  </data>

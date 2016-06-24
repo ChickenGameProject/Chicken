@@ -7,7 +7,8 @@
 
 extern Game * game;
 Bullet_gift::Bullet_gift(){
-    bulletgift = QPixmap("");
+    qDebug()<<"bullet gift ctor";
+    bulletgift = QPixmap("E:\\game\\sprites\\bomb33.png");
     setPixmap(bulletgift);
 
     QTimer * timer = new QTimer();

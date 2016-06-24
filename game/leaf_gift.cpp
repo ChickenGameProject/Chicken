@@ -7,7 +7,7 @@
 
 extern Game * game;
 Leaf_Gift::Leaf_Gift(){
-    leafGift = QPixmap("");
+    leafGift = QPixmap("E:\\game\\sprites\\bomb2.png");
     setPixmap(leafGift);
 
     QTimer * timer = new QTimer();
@@ -26,7 +26,7 @@ void Leaf_Gift::move(){
             qDebug()<<"colliding";
 
             // increase score
-            //game->score->increas(2);
+            game->score->increase(2);
 
 
             // remove them from the scene
