@@ -50,6 +50,7 @@ void Client::displayMenu()
     /*
 
     scene->setBackgroundBrush(QBrush(QColor(0, 0, 0)));
+>>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43:Client_G/client.cpp
 /*
     // creat Button start
     Button *sstart;

@@ -2,12 +2,15 @@
 #include "button.h"
 #include "player.h"
 #include "ship_level_1.h"
+<<<<<<< HEAD
+=======
 //#include "ship_level_2.h"
+>>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
 #include <QDebug>
 #include <QGraphicsPixmapItem>
 #include "score.h"
 #include <QTimer>
-
+#include <QPoint>
 
 extern Game * game;
 Game::Game(QWidget *parent){
@@ -25,6 +28,7 @@ Game::Game(QWidget *parent){
     ship1 = NULL;
 
     setMouseTracking(true);
+
 
 }
 
@@ -45,13 +49,18 @@ void Game::displayMenu(){
     exit->setPos(width()/2 - 100,(height()/2));
     connect(exit,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(exit);
-
 }
 
 void Game::mouseMoveEvent(QMouseEvent *event){
     if(ship1){
-        ship1->setPos(event->pos());
+        QPoint a = event->pos();
+        if (a.y()<200){
+            ship1->setPos(a.x(),200);
+        }else{
+        ship1->setPos(a);}
     }
+
+
 }
 
 void Game::setPlayer(){
@@ -63,11 +72,12 @@ void Game::setPlayer(){
 
     // player does'nt exist
     ship1 = new ship_level_1();
+    //
     ship1->setFlag(QGraphicsItem::ItemIsFocusable);
     ship1->setFocus();
+    //
     ship1->setPos(width()/2,height()/2);
     scene->addItem(ship1);
-
 
 }
 
@@ -78,7 +88,7 @@ void Game::decreaseLife(){
     delete life[Life::numberOfLife-1];
     life.pop_back();
     // decrease the static numberOfLife
-    life[0]->decreas();
+    Life::numberOfLife--;
 
 }
 
@@ -88,7 +98,7 @@ void Game::start(){
     scene->clear();
 
     // set background of game
-    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\back.png")));
+    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
 
     // set player
     setPlayer();
@@ -111,6 +121,8 @@ void Game::start(){
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
     timer->start(4000);
+
+    // add chicken
 
 
 }

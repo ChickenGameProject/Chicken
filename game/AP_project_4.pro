@@ -29,8 +29,13 @@ SOURCES += main.cpp \
     gift.cpp \
     bullet_gift.cpp \
     bomb.cpp \
+<<<<<<< HEAD
+    leaf_gift.cpp \
+    bullet_level_2.cpp
+=======
     leaf_gift.cpp
 >>>>>>> b5f792f708ec117f5db4839b00ab11d00476a77e
+>>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
 
 HEADERS  += \
     game.h \
@@ -49,8 +54,13 @@ HEADERS  += \
     gift.h \
     bullet_gift.h \
     bomb.h \
+<<<<<<< HEAD
+    leaf_gift.h \
+    bullet_level_2.h
+=======
     leaf_gift.h
 >>>>>>> b5f792f708ec117f5db4839b00ab11d00476a77e
+>>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
 
 RESOURCES += \
     resource.qrc \

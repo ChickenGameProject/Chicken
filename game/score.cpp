@@ -36,6 +36,7 @@ Score::Score(QObject *parent){
 
 void Score::increas(int num){
     score += num;
+    setPlainText(QString("Score: ") + QString::number(score));
 }
 
 int Score::getscore(){
