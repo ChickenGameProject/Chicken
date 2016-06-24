@@ -53,8 +53,6 @@ void Bomb::move(){
             // decreas the life
             game->decreaseLife();
 
-            game->score->increas(6);
-
             // remove them from the scene
             scene()->removeItem(this);
 
