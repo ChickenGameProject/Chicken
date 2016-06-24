@@ -85,6 +85,9 @@ void Game::decreaseLife(){
     life.pop_back();
     // decrease the static numberOfLife
     Life::numberOfLife--;
+    Life*life_num;
+    int num=Life::numberOfLife;
+    life_num->Write(num);
 
 }
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.5.1, 2016-06-24T10:46:20. -->
 =======
 <<<<<<< HEAD
@@ -21,6 +22,11 @@
  </data>
  <data>
 >>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
+=======
+<!-- Written by QtCreator 3.1.1, 2016-06-24T12:37:01. -->
+<qtcreator>
+ <data>
+>>>>>>> a4ca456ae0ce7e0282218980f5c946721648dc5d
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
   <value type="int">0</value>
  </data>
@@ -72,19 +78,14 @@
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
-<<<<<<< HEAD
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.3.0 MinGW 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.3.0 MinGW 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.53.win32_mingw482_kit</value>
-=======
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.5.1 MSVC2013 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.5.1 MSVC2013 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.55.win64_msvc2013_64_kit</value>
->>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/acer/Documents/Ap_Project/build-AP_project_4-Desktop_Qt_5_5_1_MSVC2013_64bit-Debug</value>
 =======
@@ -94,6 +95,9 @@
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/NP/Documents/ap/build-AP_project_4-Desktop_Qt_5_5_1_MSVC2013_64bit-Debug</value>
 >>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
 >>>>>>> 1a4eb0fc7dee6255f7d9871fa26d3cc474f1fcb6
+=======
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Qt/2010.04/qt/build-AP_project_4-Desktop_Qt_5_3_0_MinGW_32bit_qt_53_w-Debug</value>
+>>>>>>> a4ca456ae0ce7e0282218980f5c946721648dc5d
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -104,11 +108,6 @@
       <value type="bool" key="QtProjectManager.QMakeBuildStep.LinkQmlDebuggingLibraryAuto">true</value>
       <value type="QString" key="QtProjectManager.QMakeBuildStep.QMakeArguments"></value>
       <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
-<<<<<<< HEAD
-=======
-      <value type="bool" key="QtProjectManager.QMakeBuildStep.SeparateDebugInfo">false</value>
-      <value type="bool" key="QtProjectManager.QMakeBuildStep.UseQtQuickCompiler">false</value>
->>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
      </valuemap>
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -152,6 +151,7 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/acer/Documents/Ap_Project/build-AP_project_4-Desktop_Qt_5_5_1_MSVC2013_64bit-Release</value>
 =======
 <<<<<<< HEAD
@@ -160,6 +160,9 @@
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/NP/Documents/ap/build-AP_project_4-Desktop_Qt_5_5_1_MSVC2013_64bit-Release</value>
 >>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
 >>>>>>> 1a4eb0fc7dee6255f7d9871fa26d3cc474f1fcb6
+=======
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Qt/2010.04/qt/build-AP_project_4-Desktop_Qt_5_3_0_MinGW_32bit_qt_53_w-Release</value>
+>>>>>>> a4ca456ae0ce7e0282218980f5c946721648dc5d
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -170,11 +173,6 @@
       <value type="bool" key="QtProjectManager.QMakeBuildStep.LinkQmlDebuggingLibraryAuto">true</value>
       <value type="QString" key="QtProjectManager.QMakeBuildStep.QMakeArguments"></value>
       <value type="bool" key="QtProjectManager.QMakeBuildStep.QMakeForced">false</value>
-<<<<<<< HEAD
-=======
-      <value type="bool" key="QtProjectManager.QMakeBuildStep.SeparateDebugInfo">false</value>
-      <value type="bool" key="QtProjectManager.QMakeBuildStep.UseQtQuickCompiler">false</value>
->>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
      </valuemap>
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -271,6 +269,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">AP_project_4</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/acer/Documents/Ap_Project/game/AP_project_4.pro</value>
 =======
 <<<<<<< HEAD
@@ -279,6 +278,9 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/NP/Documents/ap/game/AP_project_4.pro</value>
 >>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
 >>>>>>> 1a4eb0fc7dee6255f7d9871fa26d3cc474f1fcb6
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/asus/Chicken/game/AP_project_4.pro</value>
+>>>>>>> a4ca456ae0ce7e0282218980f5c946721648dc5d
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">AP_project_4.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
@@ -295,7 +297,6 @@
   </valuemap>
  </data>
  <data>
-<<<<<<< HEAD
   <variable>ProjectExplorer.Project.Target.1</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop-Qt 5.3.0 MinGW 32bit</value>
@@ -490,17 +491,5 @@
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
   <value type="int">15</value>
-=======
-  <variable>ProjectExplorer.Project.TargetCount</variable>
-  <value type="int">1</value>
- </data>
- <data>
-  <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
-  <value type="int">18</value>
- </data>
- <data>
-  <variable>Version</variable>
-  <value type="int">18</value>
->>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
  </data>
 </qtcreator>

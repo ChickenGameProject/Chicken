@@ -26,7 +26,7 @@ void Leaf_Gift::move(){
             qDebug()<<"colliding";
 
             // increase score
-            game->score->increas(2);
+            //game->score->increas(2);
 
 
             // remove them from the scene
