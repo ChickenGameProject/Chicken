@@ -2,6 +2,10 @@
 #include "button.h"
 #include "player.h"
 #include "ship_level_1.h"
+<<<<<<< HEAD
+=======
+//#include "ship_level_2.h"
+>>>>>>> 7854507b147807556dcdaf4c7f0e4f4a93b4bc43
 #include <QDebug>
 #include <QGraphicsPixmapItem>
 #include "score.h"
