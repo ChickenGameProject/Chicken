@@ -88,6 +88,24 @@ void Game::decreaseLife(){
    // Life*life_num;
    // int num=Life::numberOfLife;
    // life_num->Write(num);
+    if(Life::numberOfLife==0){
+        scene->clear();
+        game->setBackgroundBrush(QBrush(QImage("")));//a pictire after clear ecene
+
+        // creat Button restart
+        Button * restart;
+        restart = new Button("");// a picture for restart
+        restart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+        connect(restart,SIGNAL(clicked()),this,SLOT(start()));
+        scene->addItem(restart);
+
+        // creat Buttom exit
+        Button * exitt;
+        exitt = new Button("");//a picture for exit
+        exitt->setPos(width()/2 - 100,(height()/2));
+        connect(exitt,SIGNAL(clicked()),this,SLOT(close()));
+        scene->addItem(exitt);
+    }
 
 }
 

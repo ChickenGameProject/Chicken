@@ -70,25 +70,35 @@ void chicken_level_1::move(){
         delete this;
     }
 
+<<<<<<< HEAD
     int STEP_SIZE = 10; // sorat !!!
+=======
+    int STEP_SIZE = 20; // sorat !!!
+>>>>>>> 45799ecbcfcb9e9011b1c55201093301a26a3ac2
     double theta = rotation(); // degrees
 
     double dy = STEP_SIZE * qSin(qDegreesToRadians(theta));
     double dx = STEP_SIZE * qCos(qDegreesToRadians(theta));
+<<<<<<< HEAD
     // ----------------------------------------------------
     int angle;
 
+=======
+>>>>>>> 45799ecbcfcb9e9011b1c55201093301a26a3ac2
     //-----------------------------------------------------
     if (game->level->getlevel()==1){
          setPos(x()+dx, y()+dy);
     }
     else if(game->level->getlevel()==2){
+<<<<<<< HEAD
         STEP_SIZE+=10;
         if (this->y()>= 400 ){
             qDebug()<<"bigger ";
             angle = -90;
             this->setRotation(angle);
         }
+=======
+>>>>>>> 45799ecbcfcb9e9011b1c55201093301a26a3ac2
         setPos(x()+dx, y()+dy);
     }
     else if (game->level->getlevel()==3){

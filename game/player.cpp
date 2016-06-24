@@ -29,9 +29,15 @@ void Player::spawn2(){
         chicken1->setRotation(angle);
         chicken2->setRotation(angle);
         chicken3->setRotation(angle);
+<<<<<<< HEAD
         chicken1->setPos(game->width()-10,100);
         chicken2->setPos(game->width()-10,150);
         chicken3->setPos(game->width()-10,200);
+=======
+        chicken1->setPos(x()+1000,y()-300);
+        chicken2->setPos(x()+1000,y()-400);
+        chicken3->setPos(x()+1000,y()-500);
+>>>>>>> 45799ecbcfcb9e9011b1c55201093301a26a3ac2
         scene()->addItem(chicken1);
         scene()->addItem(chicken2);
         scene()->addItem(chicken3);
@@ -43,13 +49,26 @@ void Player::spawn2(){
 
         Chicken * chicken1 = new chicken_level_1();
         Chicken * chicken2 = new chicken_level_1();
+<<<<<<< HEAD
         chicken1->setPos(game->width(),120);
         chicken2->setPos(game->width(),220);
+=======
+        chicken1->setPos(game->width(),60);
+        chicken2->setPos(game->width(),120);
+>>>>>>> 45799ecbcfcb9e9011b1c55201093301a26a3ac2
         chicken1->setRotation(angle);
         game->scene->addItem(chicken1);
         chicken2->setRotation(angle);
         game->scene->addItem(chicken2);
 
+<<<<<<< HEAD
+=======
+        if (chicken1->y()>= 500 ){
+            angle = - 45;
+            chicken1->setRotation(angle);
+            chicken2->setRotation(angle);
+        }
+>>>>>>> 45799ecbcfcb9e9011b1c55201093301a26a3ac2
 
 
     }
