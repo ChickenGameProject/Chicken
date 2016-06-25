@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <QPoint>
 #include<QMediaPlayer>
+#include <windows.h>
 
 extern Game * game;
 extern Player * ship1;
@@ -89,11 +90,7 @@ void Game::decreaseLife(){
     life.pop_back();
     // decrease the static numberOfLife
     Life::numberOfLife--;
-<<<<<<< HEAD
-    Life*life_num;
-    int num=Life::numberOfLife;
-    life_num->Write(num);
-=======
+
    // Life*life_num;
    // int num=Life::numberOfLife;
    // life_num->Write(num);
@@ -119,21 +116,14 @@ void Game::increaseLife(){
 void Game::GameOver(){
 
     setMouseTracking(false);
-
+    QMouseEvent *event;
+    ship1->setPos(width()/2,height()-100);
     // creat Button restart
-<<<<<<< HEAD
-    Button * restart;
-    restart = new Button("E:\\game\\sprites\\start1.jpg");// a picture for restart
-    restart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
-    connect(restart,SIGNAL(clicked()),this,SLOT(start()));
-    scene->addItem(restart);
->>>>>>> eea7bf31e16e4fde67213874b83c2b31a76029ad
-=======
+
     restartt = new Button(":/image/restart.png");// a picture for restart
-    restartt->setPos(game->width()/2 -200 ,game->height()/2 - 120);
+    restartt->setPos(game->width()/2 -198 ,game->height()/2 - 130);
     connect(restartt,SIGNAL(clicked()),this,SLOT(restart()));
     scene->addItem(restartt);
->>>>>>> 8322d3ec9db1cc95f6c14a58171fe50bdae9e2db
 
     // creat Buttom exit
     exitt = new Button(":/image/exit.png");//a picture for exit
@@ -179,7 +169,20 @@ void Game::start(){
     // add bomb every 4 second
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
-    timer->start(4000);
+    if (level->getlevel()==2){
+        timer->start(3000);}
+    else if(level->getlevel()==3){
+        timer->start(2500);
+    }
+    else if(level->getlevel()==4){
+        timer->start(1000);
+    }
+    else if (level->getlevel() == 5 ){
+        timer->start(1000);
+    }
+    else{
+        timer->start(4000);
+    }
 
     // add level
     level = new Level();

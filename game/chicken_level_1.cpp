@@ -54,7 +54,7 @@ void chicken_level_1::move(){
 
 
     // if the chicken is off the screen, destroy it
-    if (pos().y() < 0){
+    if (pos().y() < 0 || pos().x()<0 || pos().x()>game->width() || pos().y()>game->height()){
         scene()->removeItem(this);
         delete this;
     }
@@ -86,16 +86,17 @@ void chicken_level_1::move(){
     }
     // ----------------------------------------------------
     else if (game->level->getlevel()==3){
-        STEP_SIZE = 25;
+        STEP_SIZE = 40;
         setPos(x()+dx, y()+dy);
     }
     // ----------------------------------------------------
     else if(game->level->getlevel()==4){
-        STEP_SIZE = 30;
+        STEP_SIZE = 50;
         setPos(x()+dx, y()+dy);
     }
     // ----------------------------------------------------
     else if (game->level->getlevel()==5){
+        STEP_SIZE = 5;
         setPos(x()+dx, y()+dy);
     }
 }

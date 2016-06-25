@@ -3,6 +3,7 @@
 #include<QTextStream>
 #include<QDebug>
 
+/*
 void Write(int num){
 
     QFile mfile("C:/Users/acer/Documents/Ap_Project/game/heart_num");
@@ -36,7 +37,7 @@ int Read(){
     mfile.close();
 }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 void Write(int num){
 
     QFile mfile("C:/Users/acer/Documents/Ap_Project/game/heart_num");
@@ -70,11 +71,9 @@ int Read(){
     mfile.close();
     return num;
 }
-
-int Life::numberOfLife = 5;
-=======
+*/
 int Life::numberOfLife = 3;
->>>>>>> 8322d3ec9db1cc95f6c14a58171fe50bdae9e2db
+
 Life::Life(QObject *parent){
     setPixmap(QPixmap(":/image/heart.png"));
 }
