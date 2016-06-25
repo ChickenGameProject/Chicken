@@ -5,11 +5,13 @@
 #include <QGraphicsScene>
 #include <QMouseEvent>
 #include <QString>
+#include<QMediaPlayer>
 #include "player.h"
 #include <QVector>
 #include "life.h"
 #include "score.h"
 #include "level.h"
+#include "button.h"
 
 class Game : public QGraphicsView{
     Q_OBJECT
@@ -27,11 +29,14 @@ public:
 
 public slots:
     void start();
+    void restart();
 public:
-     Player * ship1;
+    // Player * ship1;
      QVector<Life*> life;
      Score * score;
      Level * level;
+     Button * restartt;
+     Button * exitt;
 };
 
 

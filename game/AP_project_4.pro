@@ -5,7 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui \
-          multimedia
+          multimedia  \
+
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = AP_project_4
@@ -49,7 +51,6 @@ HEADERS  += \
     level.h \
     chicken_level_2.h
 RESOURCES += \
-    resource.qrc \
     res.qrc
 
 DISTFILES += \

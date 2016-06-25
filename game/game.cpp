@@ -7,8 +7,11 @@
 //#include "score.h"
 #include <QTimer>
 #include <QPoint>
+#include<QMediaPlayer>
 
 extern Game * game;
+extern Player * ship1;
+extern int Fire;
 Game::Game(QWidget *parent){
 
     // view
@@ -25,6 +28,7 @@ Game::Game(QWidget *parent){
 
     setMouseTracking(true);
 
+    Fire = 1;
 
 }
 
@@ -34,15 +38,15 @@ void Game::displayMenu(){
 
     // creat Button start
     Button *sstart;
-    sstart = new Button("E:\\game\\sprites\\start1.jpg");
-    sstart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+    sstart = new Button(":/image/play.png");
+    sstart->setPos(game->width()/2 -200 ,game->height()/2 - 120);
     connect(sstart,SIGNAL(clicked()),this,SLOT(start()));
     scene->addItem(sstart);
 
     // creat Buttom exit
     Button * exit;
-    exit = new Button("E:\\game\\sprites\\start1.jpg");
-    exit->setPos(width()/2 - 100,(height()/2));
+    exit = new Button(":/image/exit.png");
+    exit->setPos(width()/2 - 200,(height()/2));
     connect(exit,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(exit);
 }
@@ -60,7 +64,7 @@ void Game::mouseMoveEvent(QMouseEvent *event){
 }
 
 void Game::setPlayer(){
-    // if player exits
+    // if player exist
     if (ship1){
         scene->removeItem(ship1);
         delete ship1 ;
@@ -113,21 +117,27 @@ void Game::increaseLife(){
 }
 
 void Game::GameOver(){
-    scene->clear();
-    game->setBackgroundBrush(QBrush(QImage("")));//a pictire after clear ecene
+
+    setMouseTracking(false);
 
     // creat Button restart
+<<<<<<< HEAD
     Button * restart;
     restart = new Button("E:\\game\\sprites\\start1.jpg");// a picture for restart
     restart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
     connect(restart,SIGNAL(clicked()),this,SLOT(start()));
     scene->addItem(restart);
 >>>>>>> eea7bf31e16e4fde67213874b83c2b31a76029ad
+=======
+    restartt = new Button(":/image/restart.png");// a picture for restart
+    restartt->setPos(game->width()/2 -200 ,game->height()/2 - 120);
+    connect(restartt,SIGNAL(clicked()),this,SLOT(restart()));
+    scene->addItem(restartt);
+>>>>>>> 8322d3ec9db1cc95f6c14a58171fe50bdae9e2db
 
     // creat Buttom exit
-    Button * exitt;
-    exitt = new Button("E:\\game\\sprites\\start1.jpg");//a picture for exit
-    exitt->setPos(width()/2 - 100,(height()/2));
+    exitt = new Button(":/image/exit.png");//a picture for exit
+    exitt->setPos(game->width()/2 - 200,(game->height()/2));
     connect(exitt,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(exitt);
 }
@@ -137,14 +147,23 @@ void Game::start(){
     // clean scene
     scene->clear();
 
+    // music
+    QMediaPlayer * music=new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/sound/backsound.mp3"));
+    music->play();
+
     // set background of game
-    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
+    game->setBackgroundBrush(QBrush(QImage(":/image/background.jpg")));
 
     // set player
     setPlayer();
 
     // add life
+    if (Life::numberOfLife == 0){
+        Life::numberOfLife = 3;
+    }
     life.resize(Life::numberOfLife);
+    qDebug()<<Life::numberOfLife;
 
     for (int i=0;i<Life::numberOfLife;i++){
         life[i] = new Life();
@@ -172,6 +191,19 @@ void Game::start(){
      QTimer * timer3 = new QTimer();
      QObject::connect(timer3,SIGNAL(timeout()),ship1,SLOT(spawn2()));
      timer3->start(2000);
+}
 
+void Game::restart(){
 
+    scene->removeItem(ship1);
+    for (int i=0;i<life.size();i++){
+
+        scene->removeItem(life[i]);
+        //delete  life[i];
+        //life.pop_back();
+    }
+    scene->removeItem(level);
+    scene->removeItem(score);
+
+    start();
 }

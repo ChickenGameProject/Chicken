@@ -1,15 +1,5 @@
-#ifndef CHICKEN_LEVEL_2_H
-#define CHICKEN_LEVEL_2_H
+#ifndef CHICKEN_LEVEL_2
+#define CHICKEN_LEVEL_2
 
-#include "chicken_level_2.h"
-#include "chicken.h"
+#endif // CHICKEN_LEVEL_2
 
-class Chicken_level_2 : public Chicken{
-    Q_OBJECT
-public:
-    Chicken_level_2();
-public slots:
-    void move();
-};
-
-#endif // CHICKEN_LEVEL_2_H

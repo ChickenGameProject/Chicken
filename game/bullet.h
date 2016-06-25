@@ -8,7 +8,7 @@ class Bullet : public QObject,public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     Bullet(QObject *parent = 0);
-
+    QPixmap bullet1;
 signals:
 
 public slots:
