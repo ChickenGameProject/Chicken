@@ -64,7 +64,7 @@ void Game::mouseMoveEvent(QMouseEvent *event){
 }
 
 void Game::setPlayer(){
-    // if player exits
+    // if player exist
     if (ship1){
         scene->removeItem(ship1);
         delete ship1 ;
@@ -133,6 +133,7 @@ void Game::start(){
     // clean scene
     scene->clear();
 
+    // music
     QMediaPlayer * music=new QMediaPlayer();
     music->setMedia(QUrl("qrc:/sound/backsound.mp3"));
     music->play();
@@ -180,7 +181,6 @@ void Game::start(){
 
 void Game::restart(){
 
-
     scene->removeItem(ship1);
     for (int i=0;i<life.size();i++){
 
@@ -192,70 +192,4 @@ void Game::restart(){
     scene->removeItem(score);
 
     start();
-    /*
-
-
-    // delete items
-
-    scene->removeItem(ship1);
-    delete ship1;
-
-    scene->removeItem(score);
-    delete score;
-
-    for (int i= Life::numberOfLife-1;i>=0;i--){
-
-        scene->removeItem(life[i]);
-        delete  life[i];
-        life.pop_back();
-    }
-
-    scene->removeItem(level);
-     delete level;
-
-    scene->removeItem(exitt);
-    delete exitt;
-    scene->removeItem(restartt);
-    delete restartt;
-
-
-    // set background of game
-    //game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
-
-    //game = new Game();
-    scene->clear();
-    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
-    // set player
-    setPlayer();
-
-    // add life
-    life.resize(Life::numberOfLife);
-
-    for (int i=0;i<Life::numberOfLife;i++){
-    life[i] = new Life();
-    scene->addItem(life[i]);
-    life[i]->setPos(i*20,0);
-    }
-
-    // add score
-    score = new Score();
-    scene->addItem(score);
-    score->setPos(width()-250,0);
-
-    // add bomb every 4 second
-    QTimer * timer = new QTimer();
-    QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
-    timer->start(4000);
-
-    // add level
-    level = new Level();
-    scene->addItem(level);
-    level->setPos(width()-250,30);
-
-    // add chicken
-    //mehrnaz chicken_level_1
-    QTimer * timer3 = new QTimer();
-    QObject::connect(timer3,SIGNAL(timeout()),ship1,SLOT(spawn2()));
-    timer3->start(2000);
-*/
 }

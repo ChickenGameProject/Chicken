@@ -19,13 +19,11 @@ chicken_level_1::chicken_level_1(){
 
     //draw a enemy
    setPixmap(QPixmap(":/image/chicken.png"));
-    //set random positin
-        //int random_number=rand()%1400;
-        //int random_number=rand()%700;
-        //setPos(random_number,100);
 
-        //setTransformOriginPoint(220,70);
-        setRotation(180);
+   QMediaPlayer * music=new QMediaPlayer();
+   music->setMedia(QUrl("qrc:/sound/chickensound.mp3"));
+   music->play();
+
          //connect
         QTimer *timer=new QTimer();
         connect(timer,SIGNAL(timeout()),this,SLOT(move()));
@@ -35,49 +33,24 @@ chicken_level_1::chicken_level_1(){
 
 void chicken_level_1::move(){
 
-/*
+
     //if bullet collides whth enemy
     QList<QGraphicsItem*>colliding_items=collidingItems();
     for(int i=0,n=colliding_items.size();i<n;i++){
-        if(typeid(*(colliding_items[i]))==typeid(Bullet_level_1)){
-           if (this->getpower()<= ship1->getpower()){
-                //inctrese score
-                game->score->increase(10);
+        if(typeid(*(colliding_items[i]))==typeid(ship_level_1)){
 
-                int randomNumber=(rand()%5);
-                if(randomNumber==1){
-                    Bullet_gift * gift1;
-                    gift1 =new Bullet_gift();
-                    scene()->addItem(gift1);
-                    gift1->setPos(this->x(),this->y());
-
-                }
-                else {
-                    gift * gift2;
-                    gift2 =new Leaf_Gift();
-                    scene()->addItem(gift2);
-                    gift2->setPos(this->x(),this->y());
-                }
-                scene()->removeItem(colliding_items[i]);
+                //
+                game->decreaseLife();
                 scene()->removeItem(this);
 
-                delete colliding_items[i];
+                //
                 delete this;
 
-           }
-           else {
-                // this->getpower()> ship1->getpower()
-                this->power-=ship1->getpower();
-                qDebug()<<this->getpower();
-                qDebug()<<ship1->getpower();
-                // remove bullet
-                scene()->removeItem(colliding_items[i]);
-                delete colliding_items[i];
-                }
+         }
 
-            }
+
     }
-*/
+
 
 
     // if the chicken is off the screen, destroy it

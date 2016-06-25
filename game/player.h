@@ -7,7 +7,7 @@
 #include <QMouseEvent>
 #include <QObject>
 #include "chicken.h"
-#include <QMediaPlayer>
+
 #include <QtMultimedia/QMediaPlayer>
 
 //base class
@@ -21,7 +21,7 @@ public:
      int power;
      int& getpower(){ return chicken1->getpower(); }
 
-     QMediaPlayer * bulletsound;
+
 
      Chicken * chicken1;
      Chicken * chicken2;

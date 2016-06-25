@@ -17,5 +17,6 @@
     <qresource prefix="/sound">
         <file>backsound.mp3</file>
         <file>chickensound.mp3</file>
+        <file>bullet1.mp3</file>
     </qresource>
 </RCC>

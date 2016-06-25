@@ -13,19 +13,23 @@ ship_level_1::ship_level_1(){
 
     power = 1;
 
+    bulletsound = new QMediaPlayer();
+    bulletsound->setMedia(QUrl("qrc:/sounds/bullet1.mp3"));
+    bulletsound->play();
+
     ship1 = QPixmap(":/image/ship.png");
     setPixmap(ship1);
 }
 
 void ship_level_1::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Space){
-        // play bulletsound
+     /*   // play bulletsound
         if (bulletsound->state() == QMediaPlayer::PlayingState){
             bulletsound->setPosition(0);
         }
         else if (bulletsound->state() == QMediaPlayer::StoppedState){
             bulletsound->play();
-        }
+        }     */
         fire();
     }
 }
@@ -64,7 +68,7 @@ void ship_level_1::fire(){
             bullet2 = new bullet_level_2();
         }
         bullet1->setPos(x()+30,y());
-        bullet2->setPos(x()+185,y());
+        bullet2->setPos(x()+29,y());
 
         // set angle
         int angle = -90;
@@ -91,8 +95,8 @@ void ship_level_1::fire(){
         }
 
         bullet1->setPos(x()+30,y());
-        bullet2->setPos(x()+185,y());
-        bullet3->setPos(x()+100,y());
+        bullet2->setPos(x()+28,y());
+        bullet3->setPos(x()+29,y());
 
         // set angle
         int angle = -90;

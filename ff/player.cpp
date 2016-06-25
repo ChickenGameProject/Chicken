@@ -22,6 +22,21 @@ void Player::spawn(){
 
 void Player::spawn2(){
     if (game->level->getlevel()==1){
+        /*
+        int angle = 180;
+        chicken1 = new chicken_level_1();
+        chicken2 = new chicken_level_1();
+        chicken3 = new chicken_level_1();
+        chicken1->setRotation(angle);
+        chicken2->setRotation(angle);
+        chicken3->setRotation(angle);
+        //chicken1->setPos(game->width()-10,100);
+        chicken1->setPos(0,100);
+        chicken2->setPos(0,150);
+        chicken3->setPos(0,200);
+        scene()->addItem(chicken1);
+        scene()->addItem(chicken2);
+        scene()->addItem(chicken3); */
         int angle = 180;
         chicken1 = new chicken_level_1();
         chicken2 = new chicken_level_1();
@@ -39,6 +54,7 @@ void Player::spawn2(){
     }
 
     else if(game->level->getlevel()==2){
+        // set angle
         // set angle
        int angle = 180;
 

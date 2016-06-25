@@ -15,9 +15,13 @@ bullet_level_2::bullet_level_2(){
     bullet1 = (QPixmap(":/image/bullet2.png"));
     setPixmap(bullet1);
 
-    // make/connect a timer to move() the bullet every so often
+    // make/connect a timer to move()
     QTimer * timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
+
+    QMediaPlayer * music=new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/sound/bullet1.mp3"));
+    music->play();
 
     // start the timer
     timer->start(50);

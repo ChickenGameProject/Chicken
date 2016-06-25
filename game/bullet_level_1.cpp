@@ -10,6 +10,7 @@
 #include "bullet_gift.h"
 #include "leaf_gift.h"
 #include <typeinfo>
+#include <QMediaPlayer>
 
 
 extern Player * ship1;
@@ -20,6 +21,10 @@ Bullet_level_1::Bullet_level_1(){
 
     bullet1 =(QPixmap(":/image/bullet1.png"));
     setPixmap(bullet1);
+
+    QMediaPlayer * music=new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/sound/bullet1.mp3"));
+    music->play();
 
     // make/connect a timer to move() the bullet every so often
     QTimer * timer = new QTimer(this);

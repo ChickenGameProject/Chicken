@@ -4,7 +4,7 @@
 #include "player.h"
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
-
+#include <QMediaPlayer>
 
 class ship_level_1 : public Player{
     Q_OBJECT
@@ -14,6 +14,7 @@ public:
    // void mouseMoveEvent(QMouseEvent *event);
     void fire();
     int& getpower(){ return power; }
+       QMediaPlayer * bulletsound;
 public slots:
 
 private:
