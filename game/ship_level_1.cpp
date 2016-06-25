@@ -13,12 +13,19 @@ ship_level_1::ship_level_1(){
 
     power = 1;
 
-    ship1 = QPixmap("E:\\game\\sprites\\spaceship1_1.png");
+    ship1 = QPixmap(":/image/ship.png");
     setPixmap(ship1);
 }
 
 void ship_level_1::keyPressEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_Space){
+        // play bulletsound
+        if (bulletsound->state() == QMediaPlayer::PlayingState){
+            bulletsound->setPosition(0);
+        }
+        else if (bulletsound->state() == QMediaPlayer::StoppedState){
+            bulletsound->play();
+        }
         fire();
     }
 }
@@ -28,7 +35,7 @@ void ship_level_1::fire(){
     if (game->level->getlevel()==1){
         // creat new bullet
         Bullet * bullet3;
-        qDebug()<<Fire;
+        //qDebug()<<Fire;
         if (Fire == 1){
             bullet3 = new Bullet_level_1();
         }
@@ -36,7 +43,7 @@ void ship_level_1::fire(){
             bullet3 = new bullet_level_2();
         }
 
-         bullet3->setPos(x()+100,y());
+         bullet3->setPos(x()+29,y());
 
         // set angle
         int angle = -90;
@@ -48,9 +55,14 @@ void ship_level_1::fire(){
         // creat new bullet
         Bullet * bullet1;
         Bullet * bullet2;
+        if (Fire == 1){
         bullet1 = new Bullet_level_1();
         bullet2 = new Bullet_level_1();
-
+        }
+        else{
+            bullet1 = new bullet_level_2();
+            bullet2 = new bullet_level_2();
+        }
         bullet1->setPos(x()+30,y());
         bullet2->setPos(x()+185,y());
 
@@ -60,7 +72,6 @@ void ship_level_1::fire(){
         bullet1->setRotation(angle-15);
         game->scene->addItem(bullet1);
 
-
         bullet2->setRotation(angle+15);
         game->scene->addItem(bullet2);
     }
@@ -69,9 +80,15 @@ void ship_level_1::fire(){
         Bullet * bullet1;
         Bullet * bullet2;
         Bullet * bullet3;
+        if (Fire == 1){
         bullet1 = new Bullet_level_1();
         bullet2 = new Bullet_level_1();
         bullet3 = new Bullet_level_1();
+        }else{
+            bullet1 = new bullet_level_2();
+            bullet2 = new bullet_level_2();
+            bullet3 = new bullet_level_2();
+        }
 
         bullet1->setPos(x()+30,y());
         bullet2->setPos(x()+185,y());
@@ -82,7 +99,6 @@ void ship_level_1::fire(){
 
         bullet1->setRotation(angle-15);
         game->scene->addItem(bullet1);
-
 
         bullet2->setRotation(angle+15);
         game->scene->addItem(bullet2);

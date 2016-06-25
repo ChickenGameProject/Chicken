@@ -12,6 +12,9 @@ extern Game * game;
 Player::Player(){
     power = 1;
     setPixmap(QPixmap("E:\\game\\sprites\\bomb.png"));
+
+    bulletsound = new QMediaPlayer();
+    bulletsound->setMedia(QUrl(":/sounds/chickensound.mp3"));
 }
 
 void Player::spawn(){

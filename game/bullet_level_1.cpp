@@ -1,4 +1,4 @@
-#include "bullet_level_1.h"
+ #include "bullet_level_1.h"
 #include <QTimer>
 #include "game.h"
 #include <qmath.h>

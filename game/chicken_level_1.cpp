@@ -18,14 +18,14 @@ chicken_level_1::chicken_level_1(){
     power = 2;
 
     //draw a enemy
-   setPixmap(QPixmap("E:\\game\\sprites\\a.png"));
+   setPixmap(QPixmap(":/image/chicken.png"));
     //set random positin
         //int random_number=rand()%1400;
         //int random_number=rand()%700;
         //setPos(random_number,100);
 
         //setTransformOriginPoint(220,70);
-        //setRotation(180);
+        setRotation(180);
          //connect
         QTimer *timer=new QTimer();
         connect(timer,SIGNAL(timeout()),this,SLOT(move()));

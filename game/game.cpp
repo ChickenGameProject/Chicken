@@ -134,7 +134,7 @@ void Game::start(){
     scene->clear();
 
     QMediaPlayer * music=new QMediaPlayer();
-    music->setMedia(QUrl(":/sound/backsound.mp3"));
+    music->setMedia(QUrl("qrc:/sound/backsound.mp3"));
     music->play();
 
     // set background of game

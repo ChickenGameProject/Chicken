@@ -7,6 +7,8 @@
 #include <QMouseEvent>
 #include <QObject>
 #include "chicken.h"
+#include <QMediaPlayer>
+#include <QtMultimedia/QMediaPlayer>
 
 //base class
 class Player:public QObject, public QGraphicsPixmapItem{
@@ -18,6 +20,8 @@ public:
      virtual void fire()=0;
      int power;
      int& getpower(){ return chicken1->getpower(); }
+
+     QMediaPlayer * bulletsound;
 
      Chicken * chicken1;
      Chicken * chicken2;

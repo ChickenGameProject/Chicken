@@ -25,15 +25,13 @@ bullet_level_2::bullet_level_2(){
 
 void bullet_level_2::move(){
 
-
     //if bullet collides whth enemy
     QList<QGraphicsItem*>colliding_items=collidingItems();
     for(int i=0,n=colliding_items.size();i<n;i++){
         if(typeid(*(colliding_items[i]))==typeid(chicken_level_1)){
-           if (this->getpower()>= ship1->getpower()){
-                game->score->increase(10);
-
-                int randomNumber=(rand()%10);
+          // if (this->getpower()>= ship1->getpower()){
+                game->score->increase(2);
+                int randomNumber=(rand()%5);
                 if(randomNumber==1){
                     Bullet_gift * gift1;
                     gift1 =new Bullet_gift();
@@ -41,6 +39,7 @@ void bullet_level_2::move(){
                     gift1->setPos(this->x(),this->y());
 
                 }
+                else if (randomNumber == 3){} // no gift
                 else {
                     gift * gift2;
                     gift2 =new Leaf_Gift();
@@ -53,8 +52,8 @@ void bullet_level_2::move(){
                 delete colliding_items[i];
                 delete this;
 
-           }
-           else {
+          // }
+          /* else {
                 // this->getpower()< ship1->getpower()
                 this->power-=ship1->getpower();
                 ship1->getpower()-= this->power;
@@ -63,7 +62,7 @@ void bullet_level_2::move(){
                 // remove bullet
                 scene()->removeItem(colliding_items[i]);
                 delete colliding_items[i];
-                }
+                } */
 
             }
     }
