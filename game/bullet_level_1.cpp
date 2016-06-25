@@ -18,7 +18,8 @@ Bullet_level_1::Bullet_level_1(){
 
     power = 1;
 
-    setPixmap(QPixmap(":/image/bullet1.png"));
+    bullet1 =(QPixmap(":/image/bullet1.png"));
+    setPixmap(bullet1);
 
     // make/connect a timer to move() the bullet every so often
     QTimer * timer = new QTimer(this);
@@ -81,7 +82,7 @@ void Bullet_level_1::move(){
         delete this;
     }
 
-    int STEP_SIZE = 30; // sorat !!!
+    int STEP_SIZE = 50; // sorat !!!
     double theta = rotation(); // degrees
 
     double dy = STEP_SIZE * qSin(qDegreesToRadians(theta));

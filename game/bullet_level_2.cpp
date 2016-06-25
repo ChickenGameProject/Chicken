@@ -12,7 +12,8 @@
 extern Game * game;
 extern Player * ship1;
 bullet_level_2::bullet_level_2(){
-    setPixmap(QPixmap(":/image/bullet2.png"));
+    bullet1 = (QPixmap(":/image/bullet2.png"));
+    setPixmap(bullet1);
 
     // make/connect a timer to move() the bullet every so often
     QTimer * timer = new QTimer(this);
@@ -73,7 +74,7 @@ void bullet_level_2::move(){
         delete this;
     }
 
-    int STEP_SIZE = 30; // sorat !!!
+    int STEP_SIZE = 50; // sorat !!!
     double theta = rotation(); // degrees
 
     double dy = STEP_SIZE * qSin(qDegreesToRadians(theta));

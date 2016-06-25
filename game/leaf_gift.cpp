@@ -7,7 +7,7 @@
 
 extern Game * game;
 Leaf_Gift::Leaf_Gift(){
-    leafGift = QPixmap("E:\\game\\sprites\\bomb2.png");
+    leafGift = QPixmap(":/image/star.png");
     setPixmap(leafGift);
 
     QTimer * timer = new QTimer();

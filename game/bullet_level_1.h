@@ -12,6 +12,7 @@ public slots:
     void move();
 public:
     int power;
+    QPixmap bullet1;
 };
 
 #endif // BULLET_LEVEL_1_H

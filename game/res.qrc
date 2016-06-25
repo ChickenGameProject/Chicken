@@ -9,6 +9,7 @@
         <file>heart.png</file>
         <file>blame.png</file>
         <file>bomb.png</file>
+        <file>star.png</file>
     </qresource>
     <qresource prefix="/sound">
         <file>backsound.mp3</file>

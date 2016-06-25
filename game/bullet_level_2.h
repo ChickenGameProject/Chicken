@@ -8,6 +8,7 @@ class bullet_level_2 : public Bullet{
 public:
     bullet_level_2();
      int getpower(){ return power; }
+     QPixmap bullet1;
 public slots:
     void move();
 private:
