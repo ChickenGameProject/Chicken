@@ -13,6 +13,7 @@
         <file>chicken.png</file>
         <file>ship.png</file>
         <file>rock.png</file>
+        <file>gameover.png</file>
     </qresource>
     <qresource prefix="/sound">
         <file>backsound.mp3</file>

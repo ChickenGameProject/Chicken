@@ -119,8 +119,8 @@ void Game::GameOver(){
     //QMouseEvent *event;
     ship1->setPos(width()/2,height()-100);
 
-    scene->clear();
-     game->setBackgroundBrush(QBrush(QImage(":/image/gameover.png")));
+    //scene->clear();
+    // game->setBackgroundBrush(QBrush(QImage(":/image/gameover.png")));
     // creat Button restart
 
     restartt = new Button(":/image/restart.png");// a picture for restart
