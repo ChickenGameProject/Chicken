@@ -49,7 +49,6 @@ HEADERS  += \
     level.h \
     chicken_level_2.h
 RESOURCES += \
-    resource.qrc \
     res.qrc
 
 DISTFILES += \

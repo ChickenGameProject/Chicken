@@ -38,7 +38,7 @@ int Read(){
 
 int Life::numberOfLife = 3;
 Life::Life(QObject *parent){
-    setPixmap(QPixmap("E:\\game\\sprites\\life.png"));
+    setPixmap(QPixmap(":/image/heart.png"));
 }
 
 

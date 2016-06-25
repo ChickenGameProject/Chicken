@@ -7,9 +7,11 @@
 //#include "score.h"
 #include <QTimer>
 #include <QPoint>
+#include<QMediaPlayer>
 
 extern Game * game;
 extern Player * ship1;
+extern int Fire;
 Game::Game(QWidget *parent){
 
     // view
@@ -26,6 +28,7 @@ Game::Game(QWidget *parent){
 
     setMouseTracking(true);
 
+    Fire = 1;
 
 }
 
@@ -35,15 +38,15 @@ void Game::displayMenu(){
 
     // creat Button start
     Button *sstart;
-    sstart = new Button("E:\\game\\sprites\\start1.jpg");
-    sstart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+    sstart = new Button(":/image/play.png");
+    sstart->setPos(game->width()/2 -200 ,game->height()/2 - 120);
     connect(sstart,SIGNAL(clicked()),this,SLOT(start()));
     scene->addItem(sstart);
 
     // creat Buttom exit
     Button * exit;
-    exit = new Button("E:\\game\\sprites\\start1.jpg");
-    exit->setPos(width()/2 - 100,(height()/2));
+    exit = new Button(":/image/exit.png");
+    exit->setPos(width()/2 - 200,(height()/2));
     connect(exit,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(exit);
 }
@@ -110,16 +113,17 @@ void Game::increaseLife(){
 
 void Game::GameOver(){
 
+    setMouseTracking(false);
 
     // creat Button restart
-    restartt = new Button("E:\\game\\sprites\\start1.jpg");// a picture for restart
-    restartt->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+    restartt = new Button(":/image/restart.png");// a picture for restart
+    restartt->setPos(game->width()/2 -200 ,game->height()/2 - 120);
     connect(restartt,SIGNAL(clicked()),this,SLOT(restart()));
     scene->addItem(restartt);
 
     // creat Buttom exit
-    exitt = new Button("E:\\game\\sprites\\start1.jpg");//a picture for exit
-    exitt->setPos(width()/2 - 100,(height()/2));
+    exitt = new Button(":/image/exit.png");//a picture for exit
+    exitt->setPos(game->width()/2 - 200,(game->height()/2));
     connect(exitt,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(exitt);
 }
@@ -129,8 +133,12 @@ void Game::start(){
     // clean scene
     scene->clear();
 
+    QMediaPlayer * music=new QMediaPlayer();
+    music->setMedia(QUrl(":/sound/backsound.mp3"));
+    music->play();
+
     // set background of game
-    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
+    game->setBackgroundBrush(QBrush(QImage(":/image/background.jpg")));
 
     // set player
     setPlayer();

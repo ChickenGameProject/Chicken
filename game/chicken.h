@@ -12,7 +12,7 @@ public:
      virtual void move()=0;
      virtual ~Chicken(){}
      int power;
-     int getpower(){ return power; }
+     int& getpower(){ return power; }
 signals:
 
 public slots:

@@ -2,10 +2,12 @@
 #include <QDebug>
 #include "bullet.h"
 #include "bullet_level_1.h"
+#include "bullet_level_2.h"
 #include "game.h"
 #include "chicken.h"
 #include "chicken_level_1.h"
 
+extern int Fire;
 extern Game * game;
 ship_level_1::ship_level_1(){
 
@@ -26,9 +28,15 @@ void ship_level_1::fire(){
     if (game->level->getlevel()==1){
         // creat new bullet
         Bullet * bullet3;
-        bullet3 = new Bullet_level_1();
+        qDebug()<<Fire;
+        if (Fire == 1){
+            bullet3 = new Bullet_level_1();
+        }
+        else {
+            bullet3 = new bullet_level_2();
+        }
 
-        bullet3->setPos(x()+100,y());
+         bullet3->setPos(x()+100,y());
 
         // set angle
         int angle = -90;
@@ -83,21 +91,4 @@ void ship_level_1::fire(){
         game->scene->addItem(bullet3);
     }
 }
-
-    //mehrnaz chicken level_1
-    void ship_level_1::soap()
-    {
-         Chicken * chicken1;
-         Chicken * chicken2;
-         Chicken * chicken3;
-         chicken1 = new chicken_level_1();
-         chicken2 = new chicken_level_1();
-         chicken3 = new chicken_level_1();
-         chicken1->setPos(x(),y()-300);
-         chicken2->setPos(x(),y()-400);
-         chicken3->setPos(x(),y()-500);
-         scene()->addItem(chicken1);
-         scene()->addItem(chicken2);
-         scene()->addItem(chicken3);
-    }
 

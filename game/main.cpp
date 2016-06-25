@@ -5,6 +5,7 @@
 
 Game * game;
 Player * ship1;
+int Fire;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

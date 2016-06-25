@@ -13,9 +13,9 @@ public:
     void keyPressEvent(QKeyEvent * event);
    // void mouseMoveEvent(QMouseEvent *event);
     void fire();
-    int getpower(){ return power; }
+    int& getpower(){ return power; }
 public slots:
-    void soap();
+
 private:
     QPixmap  ship1;
 public:

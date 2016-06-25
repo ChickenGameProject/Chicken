@@ -1,3 +1,17 @@
 <RCC>
-    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/image">
+        <file>restart.png</file>
+        <file>play.png</file>
+        <file>exit.png</file>
+        <file>background.jpg</file>
+        <file>bullet1.png</file>
+        <file>bullet2.png</file>
+        <file>heart.png</file>
+        <file>blame.png</file>
+        <file>bomb.png</file>
+    </qresource>
+    <qresource prefix="/sound">
+        <file>backsound.mp3</file>
+        <file>chickensound.mp3</file>
+    </qresource>
 </RCC>

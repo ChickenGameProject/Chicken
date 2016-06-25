@@ -6,11 +6,14 @@
 #include <QTimer>
 #include "bullet_level_1.h"
 #include "bullet_level_2.h"
+#include "player.h"
 
+extern Player * ship1;
 extern Game * game;
+extern int Fire;
 Bullet_gift::Bullet_gift(){
     qDebug()<<"bullet gift ctor";
-    bulletgift = QPixmap("E:\\game\\sprites\\bomb33.png");
+    bulletgift = QPixmap(":/image/bullet2.png");
     setPixmap(bulletgift);
 
     QTimer * timer = new QTimer();
@@ -29,12 +32,14 @@ void Bullet_gift::move(){
             //qDebug()<<"colliding";
 
             // if bullet is level 1
-            //if (this == typeid(Bullet_level_1)){
-
-            //}
+            if (typeid(this )== typeid(Bullet_level_1)){
+                Fire = 1;
+            }
 
             // if bullet is level 2
-
+            if (typeid(this ) == typeid(bullet_level_2)){
+                Fire = 0;
+            }
 
             // remove them from the scene
             scene()->removeItem(this);

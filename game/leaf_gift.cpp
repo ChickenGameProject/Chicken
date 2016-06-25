@@ -7,7 +7,6 @@
 
 extern Game * game;
 Leaf_Gift::Leaf_Gift(){
-    qDebug()<<"leaf gift ctor";
     leafGift = QPixmap("E:\\game\\sprites\\bomb2.png");
     setPixmap(leafGift);
 

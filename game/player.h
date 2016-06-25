@@ -17,7 +17,8 @@ public:
      virtual void keyPressEvent(QKeyEvent * event)=0;
      virtual void fire()=0;
      int power;
-     int getpower(){ return chicken1->getpower(); }
+     int& getpower(){ return chicken1->getpower(); }
+
      Chicken * chicken1;
      Chicken * chicken2;
      Chicken * chicken3;
