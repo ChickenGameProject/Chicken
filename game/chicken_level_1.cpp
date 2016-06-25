@@ -9,10 +9,13 @@
 #include "gift.h"
 #include <QDebug>
 #include <qmath.h>
+#include "ship_level_1.h"
 
+extern Player * ship1;
 extern Game * game;
 chicken_level_1::chicken_level_1(){
 
+    power = 2;
 
     //draw a enemy
    setPixmap(QPixmap("E:\\game\\sprites\\a.png"));
@@ -37,9 +40,15 @@ void chicken_level_1::move(){
     QList<QGraphicsItem*>colliding_items=collidingItems();
     for(int i=0,n=colliding_items.size();i<n;i++){
         if(typeid(*(colliding_items[i]))==typeid(Bullet_level_1)){
+       // while(1){
+
+
+           if (this->getpower()<= ship1->getpower()){
             //inctrese score
             game->score->increase(10);
-
+            //qDebug()<<this->getpower();
+            //qDebug()<<ship1->getpower();
+            //qDebug()<<power;
 
            int randomNumber=(rand()%5);
            if(randomNumber==1){
@@ -60,7 +69,26 @@ void chicken_level_1::move(){
 
            delete colliding_items[i];
            delete this;
+           break;
+           }
+           else {
+               //inctrese score
+               game->score->increase(10);
+              // qDebug()<<this->getpower();
+              // qDebug()<<ship1->getpower();
+              // qDebug()<<"else";
 
+               // this->getpower()> ship1->getpower()
+               this->power-=ship1->getpower();
+               qDebug()<<this->getpower();
+               qDebug()<<ship1->getpower();
+
+                 scene()->removeItem(colliding_items[i]);
+                 delete colliding_items[i];
+
+           }
+
+      //  }
         }
     }
 
@@ -88,7 +116,7 @@ void chicken_level_1::move(){
 
         STEP_SIZE+=10;
         if (this->y()>= 400 ){
-            qDebug()<<"bigger ";
+            //qDebug()<<"bigger ";
             angle = -90;
             this->setRotation(angle);
         }

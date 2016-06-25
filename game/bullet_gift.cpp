@@ -4,6 +4,8 @@
 #include <QDebug>
 #include "game.h"
 #include <QTimer>
+#include "bullet_level_1.h"
+#include "bullet_level_2.h"
 
 extern Game * game;
 Bullet_gift::Bullet_gift(){
@@ -24,10 +26,12 @@ void Bullet_gift::move(){
     // if one of the colliding items is an player, destroy gift and level up the bullet
     for (int i = 0, n = colliding_items.size(); i < n; ++i){
         if (typeid(*(colliding_items[i])) == typeid(ship_level_1)){
-            qDebug()<<"colliding";
+            //qDebug()<<"colliding";
 
             // if bullet is level 1
+            //if (this == typeid(Bullet_level_1)){
 
+            //}
 
             // if bullet is level 2
 

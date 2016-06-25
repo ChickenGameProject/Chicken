@@ -6,6 +6,7 @@
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QObject>
+#include "chicken.h"
 
 //base class
 class Player:public QObject, public QGraphicsPixmapItem{
@@ -15,6 +16,11 @@ public:
      virtual ~Player(){}
      virtual void keyPressEvent(QKeyEvent * event)=0;
      virtual void fire()=0;
+     int power;
+     int getpower(){ return chicken1->getpower(); }
+     Chicken * chicken1;
+     Chicken * chicken2;
+     Chicken * chicken3;
 public slots:
      void spawn();
      void spawn2();

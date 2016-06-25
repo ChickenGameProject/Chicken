@@ -6,13 +6,15 @@
 #include "chicken.h"
 #include "chicken_level_1.h"
 
+
+
 extern Game * game;
 Player::Player(){
+    power = 1;
     setPixmap(QPixmap("E:\\game\\sprites\\bomb.png"));
 }
 
 void Player::spawn(){
-    qDebug()<<"in fucn spawn";
     Bomb * bomb = new Bomb();
     game->scene->addItem(bomb);
 }
@@ -20,9 +22,7 @@ void Player::spawn(){
 void Player::spawn2(){
     if (game->level->getlevel()==1){
         int angle = 180;
-        Chicken * chicken1;
-        Chicken * chicken2;
-        Chicken * chicken3;
+
         chicken1 = new chicken_level_1();
         chicken2 = new chicken_level_1();
         chicken3 = new chicken_level_1();

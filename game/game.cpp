@@ -9,6 +9,7 @@
 #include <QPoint>
 
 extern Game * game;
+extern Player * ship1;
 Game::Game(QWidget *parent){
 
     // view
@@ -108,18 +109,15 @@ void Game::increaseLife(){
 }
 
 void Game::GameOver(){
-    scene->clear();
-    game->setBackgroundBrush(QBrush(QImage("")));//a pictire after clear ecene
+
 
     // creat Button restart
-    Button * restart;
-    restart = new Button("E:\\game\\sprites\\start1.jpg");// a picture for restart
-    restart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
-    connect(restart,SIGNAL(clicked()),this,SLOT(start()));
-    scene->addItem(restart);
+    restartt = new Button("E:\\game\\sprites\\start1.jpg");// a picture for restart
+    restartt->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+    connect(restartt,SIGNAL(clicked()),this,SLOT(restart()));
+    scene->addItem(restartt);
 
     // creat Buttom exit
-    Button * exitt;
     exitt = new Button("E:\\game\\sprites\\start1.jpg");//a picture for exit
     exitt->setPos(width()/2 - 100,(height()/2));
     connect(exitt,SIGNAL(clicked()),this,SLOT(close()));
@@ -138,7 +136,11 @@ void Game::start(){
     setPlayer();
 
     // add life
+    if (Life::numberOfLife == 0){
+        Life::numberOfLife = 3;
+    }
     life.resize(Life::numberOfLife);
+    qDebug()<<Life::numberOfLife;
 
     for (int i=0;i<Life::numberOfLife;i++){
         life[i] = new Life();
@@ -166,6 +168,86 @@ void Game::start(){
      QTimer * timer3 = new QTimer();
      QObject::connect(timer3,SIGNAL(timeout()),ship1,SLOT(spawn2()));
      timer3->start(2000);
+}
+
+void Game::restart(){
 
 
+    scene->removeItem(ship1);
+    for (int i=0;i<life.size();i++){
+
+        scene->removeItem(life[i]);
+        //delete  life[i];
+        //life.pop_back();
+    }
+    scene->removeItem(level);
+    scene->removeItem(score);
+
+    start();
+    /*
+
+
+    // delete items
+
+    scene->removeItem(ship1);
+    delete ship1;
+
+    scene->removeItem(score);
+    delete score;
+
+    for (int i= Life::numberOfLife-1;i>=0;i--){
+
+        scene->removeItem(life[i]);
+        delete  life[i];
+        life.pop_back();
+    }
+
+    scene->removeItem(level);
+     delete level;
+
+    scene->removeItem(exitt);
+    delete exitt;
+    scene->removeItem(restartt);
+    delete restartt;
+
+
+    // set background of game
+    //game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
+
+    //game = new Game();
+    scene->clear();
+    game->setBackgroundBrush(QBrush(QImage("E:\\game\\sprites\\backg.jpg")));
+    // set player
+    setPlayer();
+
+    // add life
+    life.resize(Life::numberOfLife);
+
+    for (int i=0;i<Life::numberOfLife;i++){
+    life[i] = new Life();
+    scene->addItem(life[i]);
+    life[i]->setPos(i*20,0);
+    }
+
+    // add score
+    score = new Score();
+    scene->addItem(score);
+    score->setPos(width()-250,0);
+
+    // add bomb every 4 second
+    QTimer * timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
+    timer->start(4000);
+
+    // add level
+    level = new Level();
+    scene->addItem(level);
+    level->setPos(width()-250,30);
+
+    // add chicken
+    //mehrnaz chicken_level_1
+    QTimer * timer3 = new QTimer();
+    QObject::connect(timer3,SIGNAL(timeout()),ship1,SLOT(spawn2()));
+    timer3->start(2000);
+*/
 }

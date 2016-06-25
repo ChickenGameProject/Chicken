@@ -8,6 +8,9 @@
 
 extern Game * game;
 ship_level_1::ship_level_1(){
+
+    power = 1;
+
     ship1 = QPixmap("E:\\game\\sprites\\spaceship1_1.png");
     setPixmap(ship1);
 }

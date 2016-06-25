@@ -14,7 +14,6 @@
 
 extern Game * game;
 Bomb::Bomb(){
-    qDebug()<<"ctor bomb";
     // set pixmap
     bomb = (QPixmap("E:\\game\\sprites\\bomb.png"));
     setPixmap(bomb);

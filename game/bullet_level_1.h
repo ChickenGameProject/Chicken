@@ -7,8 +7,11 @@ class Bullet_level_1: public Bullet{
     Q_OBJECT
 public:
     Bullet_level_1();
+    int getpower(){ return power; }
 public slots:
     void move();
+public:
+    int power;
 };
 
 #endif // BULLET_LEVEL_1_H

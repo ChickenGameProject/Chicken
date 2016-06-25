@@ -36,7 +36,7 @@ int Read(){
     mfile.close();
 }
 
-int Life::numberOfLife = 5;
+int Life::numberOfLife = 3;
 Life::Life(QObject *parent){
     setPixmap(QPixmap("E:\\game\\sprites\\life.png"));
 }

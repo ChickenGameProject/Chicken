@@ -24,7 +24,7 @@ void Leaf_Gift::move(){
     // if one of the colliding items is an player, destroy gift and increase the score
     for (int i = 0, n = colliding_items.size(); i < n; ++i){
         if (typeid(*(colliding_items[i])) == typeid(ship_level_1)){
-            qDebug()<<"colliding";
+           // qDebug()<<"colliding";
 
             // increase score
             game->score->increase(2);
