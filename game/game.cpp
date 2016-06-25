@@ -4,10 +4,9 @@
 #include "ship_level_1.h"
 #include <QDebug>
 #include <QGraphicsPixmapItem>
-#include "score.h"
+//#include "score.h"
 #include <QTimer>
 #include <QPoint>
-#include "level.h"
 
 extern Game * game;
 Game::Game(QWidget *parent){
@@ -15,11 +14,11 @@ Game::Game(QWidget *parent){
     // view
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(1400,800);
+    setFixedSize(1375,800);
 
     // scene
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,1400,800);
+    scene->setSceneRect(0,0,1375,800);
     setScene(scene);
 
     ship1 = NULL;
@@ -86,10 +85,51 @@ void Game::decreaseLife(){
     life.pop_back();
     // decrease the static numberOfLife
     Life::numberOfLife--;
+<<<<<<< HEAD
     Life*life_num;
     int num=Life::numberOfLife;
     life_num->Write(num);
+=======
+   // Life*life_num;
+   // int num=Life::numberOfLife;
+   // life_num->Write(num);
+    if(Life::numberOfLife==0){
+        qDebug()<<"in gameover";
+        GameOver();
+    }
 
+}
+
+void Game::increaseLife(){
+
+    // add pointer to the vector and new
+    Life * newlife = new Life();
+    life.push_back(newlife);
+    Life::numberOfLife++;
+    // add to scene
+    scene->addItem(life[Life::numberOfLife-1]);
+    life[Life::numberOfLife-1]->setPos(life[Life::numberOfLife-2]->x()+20,life[Life::numberOfLife-2]->y());
+
+}
+
+void Game::GameOver(){
+    scene->clear();
+    game->setBackgroundBrush(QBrush(QImage("")));//a pictire after clear ecene
+
+    // creat Button restart
+    Button * restart;
+    restart = new Button("E:\\game\\sprites\\start1.jpg");// a picture for restart
+    restart->setPos(game->width()/2 -100 ,game->height()/2 - 110);
+    connect(restart,SIGNAL(clicked()),this,SLOT(start()));
+    scene->addItem(restart);
+>>>>>>> eea7bf31e16e4fde67213874b83c2b31a76029ad
+
+    // creat Buttom exit
+    Button * exitt;
+    exitt = new Button("E:\\game\\sprites\\start1.jpg");//a picture for exit
+    exitt->setPos(width()/2 - 100,(height()/2));
+    connect(exitt,SIGNAL(clicked()),this,SLOT(close()));
+    scene->addItem(exitt);
 }
 
 void Game::start(){
@@ -117,14 +157,15 @@ void Game::start(){
     scene->addItem(score);
     score->setPos(width()-250,0);
 
-    // add level
-    level = new Level();
-    scene->addItem(level);
-    level->setPos(width()-250,30);
     // add bomb every 4 second
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),ship1,SLOT(spawn()));
     timer->start(4000);
+
+    // add level
+    level = new Level();
+    scene->addItem(level);
+    level->setPos(width()-250,30);
 
     // add chicken
     //mehrnaz chicken_level_1
@@ -132,9 +173,5 @@ void Game::start(){
      QObject::connect(timer3,SIGNAL(timeout()),ship1,SLOT(spawn2()));
      timer3->start(2000);
 
-     //mehrnaz for chicken level 2
-   //  QTimer *timer2=new QTimer();
-  //  QObject::connect(timer2,SIGNAL(timeout()),ship_level_2,SLOT(soap2()));
-  //  timer->start(1000);
 
 }

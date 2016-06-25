@@ -3,10 +3,11 @@
 
 #include "gift.h"
 
-class Bullet_gift : public gift
-{
+class Bullet_gift : public gift{
+    Q_OBJECT
 public:
     Bullet_gift();
+public slots:
     void move();
 private:
     QPixmap bulletgift;

@@ -18,8 +18,9 @@ Bullet_level_1::Bullet_level_1(){
 void Bullet_level_1::move(){
 
 
+
     // if there was no collision with an Enemy, move the bullet forward
-    setPos(x(),y()-10);
+   // setPos(x(),y()-10);
     // if the bullet is off the screen, destroy it
     if (pos().y() < 0){
         scene()->removeItem(this);

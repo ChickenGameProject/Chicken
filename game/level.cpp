@@ -5,7 +5,7 @@
 
 extern Game * game;
 Level::Level(){
-    level = 0;
+    level = 1;
 
     // draw the text
     setPlainText(QString("Level: ") + QString::number(level));

@@ -5,8 +5,10 @@
 
 
 class Leaf_Gift : public gift{
+    Q_OBJECT
 public:
     Leaf_Gift();
+public slots:
     void move();
 private:
     QPixmap leafGift;

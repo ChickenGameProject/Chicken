@@ -26,6 +26,10 @@ void Bullet_gift::move(){
         if (typeid(*(colliding_items[i])) == typeid(ship_level_1)){
             qDebug()<<"colliding";
 
+            // if bullet is level 1
+
+
+            // if bullet is level 2
 
 
             // remove them from the scene

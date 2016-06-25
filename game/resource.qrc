@@ -1,9 +1,5 @@
 <RCC>
     <qresource prefix="/background"/>
     <qresource prefix="/enemy"/>
-    <qresource prefix="/ship">
-        <file>ship1.png</file>
-        <file>ship2.png</file>
-        <file>ship3.png</file>
-    </qresource>
+    <qresource prefix="/ship"/>
 </RCC>
