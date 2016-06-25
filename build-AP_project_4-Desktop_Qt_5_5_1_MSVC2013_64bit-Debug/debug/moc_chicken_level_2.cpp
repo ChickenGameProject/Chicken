@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'ship_level_1.h'
+** Meta object code from reading C++ file 'chicken_level_2.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../game/ship_level_1.h"
+#include "../../game/chicken_level_2.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'ship_level_1.h' doesn't include <QObject>."
+#error "The header file 'chicken_level_2.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,27 +18,27 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_ship_level_1_t {
+struct qt_meta_stringdata_Chicken_level_2_t {
     QByteArrayData data[3];
-    char stringdata0[19];
+    char stringdata0[22];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_ship_level_1_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_Chicken_level_2_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_ship_level_1_t qt_meta_stringdata_ship_level_1 = {
+static const qt_meta_stringdata_Chicken_level_2_t qt_meta_stringdata_Chicken_level_2 = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "ship_level_1"
-QT_MOC_LITERAL(1, 13, 4), // "soap"
-QT_MOC_LITERAL(2, 18, 0) // ""
+QT_MOC_LITERAL(0, 0, 15), // "Chicken_level_2"
+QT_MOC_LITERAL(1, 16, 4), // "move"
+QT_MOC_LITERAL(2, 21, 0) // ""
 
     },
-    "ship_level_1\0soap\0"
+    "Chicken_level_2\0move\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_ship_level_1[] = {
+static const uint qt_meta_data_Chicken_level_2[] = {
 
  // content:
        7,       // revision
@@ -60,41 +60,41 @@ static const uint qt_meta_data_ship_level_1[] = {
        0        // eod
 };
 
-void ship_level_1::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Chicken_level_2::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        ship_level_1 *_t = static_cast<ship_level_1 *>(_o);
+        Chicken_level_2 *_t = static_cast<Chicken_level_2 *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->soap(); break;
+        case 0: _t->move(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObject ship_level_1::staticMetaObject = {
-    { &Player::staticMetaObject, qt_meta_stringdata_ship_level_1.data,
-      qt_meta_data_ship_level_1,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject Chicken_level_2::staticMetaObject = {
+    { &Chicken::staticMetaObject, qt_meta_stringdata_Chicken_level_2.data,
+      qt_meta_data_Chicken_level_2,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *ship_level_1::metaObject() const
+const QMetaObject *Chicken_level_2::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *ship_level_1::qt_metacast(const char *_clname)
+void *Chicken_level_2::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_ship_level_1.stringdata0))
-        return static_cast<void*>(const_cast< ship_level_1*>(this));
-    return Player::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_Chicken_level_2.stringdata0))
+        return static_cast<void*>(const_cast< Chicken_level_2*>(this));
+    return Chicken::qt_metacast(_clname);
 }
 
-int ship_level_1::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Chicken_level_2::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = Player::qt_metacall(_c, _id, _a);
+    _id = Chicken::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
